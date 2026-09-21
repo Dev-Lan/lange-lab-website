@@ -4,12 +4,14 @@
   "private": true,
   "type": "module",
   "description": "Website for the Vizoic Lab",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "vitepress dev src",
     "build": "vitepress build src",
     "preview": "vitepress preview src"
   },
   "devDependencies": {
-    "vitepress": "^1.6.4"
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.43"
   }
 }

@@ -4,11 +4,11 @@ The [VitePress](https://vitepress.dev/) source for the Vizoic Lab website — a 
 
 ## Quick start
 
-Requires Node.js 18 or newer.
+Requires Node.js 18 or newer and [pnpm](https://pnpm.io/installation).
 
 ```sh
-npm install     # once, to install dependencies
-npm run dev     # start the local dev server, then open the printed URL
+pnpm install    # once, to install dependencies
+pnpm dev        # start the local dev server, then open the printed URL
 ```
 
 The dev server hot-reloads as you edit anything under `src/`.
@@ -16,6 +16,6 @@ The dev server hot-reloads as you edit anything under `src/`.
 To check the production build — the exact static files that get deployed:
 
 ```sh
-npm run build     # writes src/.vitepress/dist
-npm run preview   # serve that build locally
+pnpm build     # writes src/.vitepress/dist
+pnpm preview   # serve that build locally
 ```

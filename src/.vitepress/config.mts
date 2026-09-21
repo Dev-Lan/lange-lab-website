@@ -9,6 +9,10 @@ export default defineConfig({
   base: '/',
   cleanUrls: true,
 
+  // Repo docs and copy-me templates live beside the content they describe, but
+  // they are not pages. Keep this in sync with isContentPage() in lib/content.mts.
+  srcExclude: ['**/README.md', '**/TEMPLATE.md'],
+
   // Light theme only: this also removes the appearance toggle from the nav bar.
   appearance: false,
 

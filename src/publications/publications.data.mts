@@ -1,12 +1,14 @@
 import { createContentLoader } from 'vitepress'
+import { isContentPage } from '../.vitepress/lib/content.mts'
 
-// One markdown file per publication in this directory. The frontmatter is kept
-// as unformatted data (authors as a list, bare DOI, venue and year separate) so
-// the same files can later be the single source of truth for a CV as well.
+// One markdown file per publication in this folder. The frontmatter is kept as
+// unformatted data (authors as a list, bare DOI, venue and year separate) so the
+// same files can later be the single source of truth for a CV as well. See
+// README.md for how to add one; TEMPLATE.md is the file to copy.
 export default createContentLoader('publications/*.md', {
   transform(raw) {
     return raw
-      .filter((page) => !isSectionIndex(page.url))
+      .filter((page) => isContentPage(page.url))
       .map(({ url, frontmatter }) => ({
         url,
         title: frontmatter.title,
@@ -20,8 +22,3 @@ export default createContentLoader('publications/*.md', {
       .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
   }
 })
-
-// The glob also matches publications/index.md, which is the listing page itself.
-function isSectionIndex(url: string) {
-  return url === '/publications/' || url === '/publications/index.html'
-}

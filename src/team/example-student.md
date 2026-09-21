@@ -11,9 +11,10 @@ links:
 
 PhD Student, Vizoic Lab
 
-**This is a placeholder profile that doubles as a template.** Copy this file,
-rename it to your own slug (e.g. `src/team/jane-doe.md`), and edit it. Everything
-below the frontmatter is yours to write.
+**This is a placeholder profile showing what a real one looks like.** To add
+yourself, copy `src/team/TEMPLATE.md` to your own slug (e.g.
+`src/team/jane-doe.md`) and edit it — `src/team/README.md` walks through the
+steps. Everything below the frontmatter is yours to write.
 
 Fill in a couple of paragraphs: what you work on, what you did before joining,
 and anything else you want people to know.

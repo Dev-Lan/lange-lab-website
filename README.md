@@ -19,3 +19,16 @@ To check the production build — the exact static files that get deployed:
 pnpm build     # writes src/.vitepress/dist
 pnpm preview   # serve that build locally
 ```
+
+## Editing content
+
+Each content folder documents itself, and each has a `TEMPLATE.md` to copy:
+
+- [`src/team/`](src/team/README.md) — one file per person
+- [`src/publications/`](src/publications/README.md) — one file per paper
+- [`src/blog/`](src/blog/README.md) — one file per post
+
+Adding anything is adding one file to the right folder; the listing pages build
+themselves from whatever is there. If you work with Claude Code, the
+`add-team-member`, `add-publication`, and `add-blog-post` skills in
+`.claude/skills/` walk through the same steps interactively.

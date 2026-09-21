@@ -1,11 +1,13 @@
 import { createContentLoader } from 'vitepress'
+import { isContentPage } from '../.vitepress/lib/content.mts'
 
-// One markdown file per post in this directory, named <date>-<slug>.md by
+// One markdown file per post in this folder, named <date>-<slug>.md by
 // convention. The `date` frontmatter field is what actually orders the list.
+// See README.md for how to add one; TEMPLATE.md is the file to copy.
 export default createContentLoader('blog/*.md', {
   transform(raw) {
     return raw
-      .filter((page) => !isSectionIndex(page.url))
+      .filter((page) => isContentPage(page.url))
       .map(({ url, frontmatter }) => ({
         url,
         title: frontmatter.title,
@@ -28,9 +30,4 @@ function formatDate(date: string | Date) {
     day: 'numeric',
     timeZone: 'UTC'
   })
-}
-
-// The glob also matches blog/index.md, which is the listing page itself.
-function isSectionIndex(url: string) {
-  return url === '/blog/' || url === '/blog/index.html'
 }

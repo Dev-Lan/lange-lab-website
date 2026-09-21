@@ -9,12 +9,15 @@ export default defineConfig({
   base: '/',
   cleanUrls: true,
 
+  // Light theme only: this also removes the appearance toggle from the nav bar.
+  appearance: false,
+
   themeConfig: {
     nav: [
+      { text: 'Home', link: '/' },
       { text: 'Team', link: '/team/' },
       { text: 'Publications', link: '/publications/' },
       { text: 'Blog', link: '/blog/' }
-    ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/Dev-Lan' }]
+    ]
   }
 })

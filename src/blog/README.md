@@ -11,7 +11,11 @@ builds its list from whatever files are here, newest `date` first.
    `2026-09-21-welcoming-new-students.md`. That filename becomes the page
    address (`/blog/2026-09-21-welcoming-new-students`).
 2. Fill in the frontmatter. See the field table below.
-3. Write the post in the body. It is plain markdown.
+3. Write the post in the body. It is plain markdown. Use `#` exactly once, for
+   the post title at the top, matching the `title` in the frontmatter; every
+   section below it is `##`, and sub-sections are `###`. Your `##` and `###`
+   headings become the "On this page" list beside the post; set `outline: false`
+   in the frontmatter if you would rather not have one.
 4. For images, put the file in `src/public/images/blog/` and reference it from
    the site root: `![Alt text](/images/blog/your-image.png)`.
 5. Preview it (see below), then commit both your markdown file and any images.
@@ -33,6 +37,7 @@ both, so the folder stays readable.
 | `date`        | yes      | `YYYY-MM-DD`, unquoted. Sorts the index and is shown as the post date. |
 | `author`      | yes      | Who wrote it, shown beside the date.                                   |
 | `description` | yes      | One sentence shown under the title on the blog index.                  |
+| `outline`     | no       | `false` hides the "On this page" list for this post. On by default.    |
 
 ## What you can and cannot change
 
@@ -49,6 +54,10 @@ Please don't, without asking first:
   and a mistake there breaks the whole blog page rather than one post.
 - Rename a published post's file. That changes its address and breaks any link
   anyone has shared to it.
+- Use a second `#` heading. The site treats `#` as the page title, so any `#`
+  after the first gets no anchor link and never shows up in the "On this page"
+  list — it looks fine while you are writing and quietly misbehaves once
+  published. If you meant a section, use `##`.
 
 ## Preview your changes
 

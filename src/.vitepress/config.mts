@@ -16,7 +16,16 @@ export default defineConfig({
   // Light theme only: this also removes the appearance toggle from the nav bar.
   appearance: false,
 
+  markdown: {
+    // Anchor every heading except the page title, so the clickable "#" links
+    // line up exactly with the range the outline lists (see themeConfig.outline).
+    anchor: { level: 2 }
+  },
+
   themeConfig: {
+    // h2 through h6 — the same headings that get a clickable "#" anchor.
+    outline: 'deep',
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Team', link: '/team/' },

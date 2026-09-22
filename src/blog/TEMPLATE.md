@@ -3,6 +3,9 @@ title: Title of Your Post
 date: 2026-01-31
 author: Your Full Name
 description: One sentence shown under the title on the blog index.
+# Optional. The "On this page" outline lists your `##` headings automatically.
+# Uncomment to hide it for this post.
+# outline: false
 ---
 
 # Title of Your Post

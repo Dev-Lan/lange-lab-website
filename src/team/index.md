@@ -1,3 +1,7 @@
+---
+outline: false
+---
+
 <script setup>
 import { data as people } from './team.data.mts'
 </script>

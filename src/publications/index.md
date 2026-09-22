@@ -17,7 +17,17 @@ const byYear = computed(() => {
 # Publications
 
 <template v-for="group in byYear" :key="group.year">
-  <h2>{{ group.year }}</h2>
+  <!-- Mirrors the markup markdown headings get, so these behave the same:
+       an id for the outline, and a "#" anchor link for copying a link to the year. -->
+  <h2 :id="`year-${group.year}`" tabindex="-1">
+    {{ group.year }}
+    <a
+      class="header-anchor"
+      :href="`#year-${group.year}`"
+      :aria-label="`Permalink to &quot;${group.year}&quot;`"
+      >&#8203;</a
+    >
+  </h2>
   <div v-for="pub in group.publications" :key="pub.url">
     <h3><a :href="pub.url">{{ pub.title }}</a></h3>
     <p>{{ pub.authors.join(', ') }}</p>

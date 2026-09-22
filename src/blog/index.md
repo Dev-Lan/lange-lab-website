@@ -1,3 +1,7 @@
+---
+outline: false
+---
+
 <script setup>
 import { data as posts } from './blog.data.mts'
 </script>

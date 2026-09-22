@@ -1,3 +1,7 @@
+---
+outline: false
+---
+
 # Vizoic Lab
 
 Vizoic Lab studies how interactive data visualization can help people make sense

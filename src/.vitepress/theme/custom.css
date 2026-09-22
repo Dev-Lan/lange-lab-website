@@ -147,9 +147,9 @@
   /* Resting colour, matching the nav bar and quick links. */
   --vizoic-c-link: var(--vp-c-text-1);
   /* Hover colour. This is the one to change to re-tune every link at once. */
-  --vizoic-c-link-hover: #1d4ed8;
+  --vizoic-c-link-hover: #0b51ac;
   /* The shimmer's single hue: the hover colour, lightened. */
-  --vizoic-c-link-shimmer: #93c5fd;
+  --vizoic-c-link-shimmer: #6b95cd;
   --vizoic-link-sweep-delay: 150ms;
   --vizoic-link-sweep-duration: 500ms;
 }

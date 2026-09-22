@@ -17,11 +17,17 @@ from them. `src/team/devin-lange.md` is a filled-in example.
 1. **Gather the details.** Ask for anything the person has not already given,
    using AskUserQuestion where the options are predictable. You need:
    - `name` (required) — their full name as they want it shown.
-   - `role` (required) — e.g. PhD Student, Postdoc, Research Assistant.
+   - `group` (required) — which section of the team page they appear under:
+     `pi`, `member`, or `alumni`. Infer it from what they tell you and confirm;
+     `member` is the usual answer.
+   - `position` (required) — their title, e.g. PhD Student, Postdoc,
+     Research Assistant, Assistant Professor.
    - `order` (optional) — where they sit on the team page, lowest first. If
      unspecified, leave it out and let it default, or offer a sensible value
      based on the `order` values already used by files in `src/team/`.
-   - `photo` (optional) — ask whether they have one and where the file is.
+   - `photo` (optional) — ask whether they have one and where the file is. The
+     card crops it to a square on a tinted panel, so either a plain headshot or
+     a cut-out with a transparent background works.
    - `links` (optional) — email, website, github, scholar, linkedin, and so on.
      Ask once for whichever they want; do not interrogate them field by field.
      Recognised link keys: `email`, `website`, `paper`, `pdf`, `video`, `code`,

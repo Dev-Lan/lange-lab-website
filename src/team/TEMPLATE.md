@@ -1,6 +1,9 @@
 ---
 name: Your Full Name
-role: Your Role
+# Which section of the team page you appear under: pi | member | alumni
+group: member
+# Your title, shown on your card: Postdoc, PhD Student, Assistant Professor, …
+position: PhD Student
 order: 50
 # Optional. Add your image to src/public/images/team/ first, then point here.
 # photo: /images/team/your-name.jpg
@@ -14,7 +17,7 @@ links:
 
 # Your Full Name
 
-Your Role, Vizoic Lab
+Your Position, Vizoic Lab
 
 Write a paragraph or two about yourself: what you work on, what you did before
 joining the lab, and anything else you want people to know. This is plain

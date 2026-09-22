@@ -1,7 +1,8 @@
 ---
 name: Devin Lange
-role: Principal Investigator
-photo: /images/team/devin-lange.jpg
+group: pi
+position: Assistant Professor
+photo: /images/team/devin-lange.jpeg
 order: 1
 links:
   email: devinscottlange@gmail.com
@@ -36,4 +37,3 @@ visualizations can help
 I thoroughly enjoy teaching, and have had the good fortune of being an instructor
 for an Introduction to Data Structures and Algorithms course at the University of
 Utah.
-

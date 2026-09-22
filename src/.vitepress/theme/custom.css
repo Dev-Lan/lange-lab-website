@@ -128,6 +128,63 @@
 }
 
 /*
+ * Team cards.
+ *
+ * The photo sits in a fixed square on a tinted panel, cropped to fill it. That
+ * keeps the row even whether a photo is a plain rectangular headshot or a
+ * cut-out with a transparent background — the tint is what the transparency
+ * shows through, so neither kind looks out of place beside the other.
+ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 24px;
+  margin: 16px 0 32px;
+}
+
+.vp-doc a.team-card {
+  display: block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.team-card-photo {
+  display: block;
+  aspect-ratio: 1;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background-color: var(--vp-c-bg-soft);
+  overflow: hidden;
+}
+
+.team-card-photo img {
+  width: 100%;
+  height: 100%;
+  /* `contain`, not `cover`: a cut-out is trimmed tight to the subject, so
+     filling the square would shave the top of someone's head. Nothing is ever
+     cropped, and a photo that is not square letterboxes onto the panel tint,
+     which is the same colour either way. Swap to `cover` for edge-to-edge
+     crops, at the cost of clipping cut-outs. */
+  object-fit: contain;
+  /* A cut-out reads better standing on the panel's floor than floating. */
+  object-position: center bottom;
+}
+
+.team-card-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.team-card-position {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--vp-c-text-2);
+}
+
+/*
  * Link interaction.
  *
  * One behaviour for every link on the site — nav bar, outline, quick links and
@@ -162,6 +219,13 @@
   transition: color 0.25s;
 }
 
+/* A team card is a link wrapping an image and two lines of text. Hovering it
+   should treat the name the way any other link is treated, so the card itself
+   is excluded from the rules below and the name stands in for it. */
+.vp-doc a.team-card:hover .team-card-name {
+  color: var(--vizoic-c-link-hover);
+}
+
 .VPNav .VPNavBarMenu .VPNavBarMenuLink > span {
   /* The link's line-height is the full nav bar height, so this span's box runs
      the depth of the bar and its hover underline would be drawn at the bar's
@@ -170,7 +234,7 @@
   line-height: 1.5;
 }
 
-.vp-doc a:not(.header-anchor):hover,
+.vp-doc a:not(.header-anchor):not(.team-card):hover,
 .VPNav .VPNavBarMenu .VPNavBarMenuLink:hover,
 #VPContent .VPDocAsideOutline .outline-link:hover,
 .QuickLinks a:hover {
@@ -210,7 +274,8 @@
     max-width: max-content;
   }
 
-  .vp-doc a:not(.header-anchor):hover,
+  .vp-doc a:not(.header-anchor):not(.team-card):hover,
+  .vp-doc a.team-card:hover .team-card-name,
   .VPNav .VPNavBarMenu .VPNavBarMenuLink:hover > span,
   #VPContent .VPDocAsideOutline .outline-link:hover,
   .QuickLinks a:hover .quick-links-label {

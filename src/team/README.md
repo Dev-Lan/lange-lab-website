@@ -17,18 +17,26 @@ means adding one file — nothing else in the repo needs to change. The
    entirely if you would rather not have one — the team page handles that.
 5. Preview it (see below), then commit both your markdown file and your image.
 
+Your photo is cropped to a square and shown on a tinted panel, so a plain
+headshot and a cut-out with a transparent background both sit correctly beside
+each other. Neither is required — a card with no photo shows the empty panel.
+Keep the file under a few hundred KB; these are displayed about 150px wide.
+
 ## Edit your page
 
 Open your file and change it. Editing the body changes only your own page;
-editing `name`, `role`, `photo`, or `order` also changes how your card looks on
-the team listing. Deleting your file removes you from the site.
+editing `name`, `position`, `photo`, or `order` also changes how your card looks
+on the team listing, and `group` moves you between its sections — that is what
+you change when you finish and become alumni. Deleting your file removes you
+from the site.
 
 ## Frontmatter fields
 
 | Field   | Required | What it does                                                             |
 | ------- | -------- | ------------------------------------------------------------------------ |
 | `name`  | yes      | Your name, shown on your card on the team page.                          |
-| `role`  | yes      | Your position, e.g. `PhD Student`. Shown under your name.                |
+| `group` | yes      | Which section you appear under: `pi`, `member`, or `alumni`.             |
+| `position` | yes   | Your title, e.g. `Postdoc`. Shown under your name on the card.           |
 | `order` | no       | Sort position on the team page, lowest first. Defaults to `99`.          |
 | `photo` | no       | Site-root path to your image, e.g. `/images/team/jane-doe.jpg`.          |
 | `links` | no       | Named links shown as the quick-links panel. See below.                   |

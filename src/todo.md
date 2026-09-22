@@ -1,8 +1,9 @@
-- consistent links style
 - clean up content
   - home page text
   - home page image
-  - delete templates
+  - delete template
+  - remove other blogs
+- reformat the team page.
 - add under construction / early access
 - publiction citation (rip from visubs and add plain text toggle)
 - hover links and nav bar elements should have a nice hover effect
@@ -10,3 +11,5 @@
 - publication rendering pipeline
 - add sections (preprint, dissertation, etc)
 - add a copyright
+- add snippet of explanation on publicaitons page
+- why is there an HR on example blog

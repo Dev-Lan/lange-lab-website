@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import Icons from 'unplugin-icons/vite'
 
 export default defineConfig({
   title: 'Vizoic Lab',
@@ -16,6 +17,13 @@ export default defineConfig({
   // Light theme only: this also removes the appearance toggle from the nav bar.
   appearance: false,
 
+  vite: {
+    // Icons are imported as components (`~icons/lucide/mail`) and bundled at
+    // build time, so nothing is fetched at runtime. Sets: lucide for generic
+    // glyphs, simple-icons for brand marks.
+    plugins: [Icons({ compiler: 'vue3' })]
+  },
+
   markdown: {
     // Anchor every heading except the page title, so the clickable "#" links
     // line up exactly with the range the outline lists (see themeConfig.outline).
@@ -23,6 +31,10 @@ export default defineConfig({
   },
 
   themeConfig: {
+    // Put the outline in the left gutter. The quick-links panel takes the right
+    // one (see theme/custom.css); the theme itself only manages this one.
+    aside: 'left',
+
     // h2 through h6 — the same headings that get a clickable "#" anchor.
     outline: 'deep',
 

@@ -19,8 +19,8 @@ feels fussier than writing a formatted citation.
 3. Delete any optional lines that do not apply, rather than leaving them blank —
    an empty `award:` still renders as an empty award line.
 4. Leave the body as it is unless you want to write a summary. It reads the
-   title, authors, venue, and links back out of the frontmatter, so you do not
-   retype any of that.
+   title, authors, and venue back out of the frontmatter, and the links appear
+   in the quick-links panel, so you do not retype any of that.
 5. Preview it (see below), then commit.
 
 ## Edit a publication
@@ -40,7 +40,28 @@ just editing the frontmatter.
 | `type`    | yes      | One of `journal`, `conference`, `workshop`, `preprint`.                        |
 | `doi`     | no       | Bare DOI such as `10.1109/TVCG.2024.3456193` — no `https://doi.org/` prefix.   |
 | `award`   | no       | Award text, shown on the listing and the page. Omit the line if there is none. |
-| `links`   | no       | Named links shown on the page: `paper`, `pdf`, `video`, `website`.             |
+| `links`   | no       | Named links shown as the quick-links panel. See below.                         |
+
+## Quick links
+
+Anything under `links` in the frontmatter is rendered as the quick-links panel:
+an icon and a name per link, in the right-hand margin on a wide screen, and at
+the bottom of the page on a narrow one. Do not also write these links into the
+body — the panel is the one place they belong now.
+
+Recognised keys, each with its own icon and label:
+
+`email`, `website`, `paper`, `pdf`, `video`, `code`, `github`, `scholar`,
+`orcid`, `linkedin`, `mastodon`, `bluesky`
+
+Any other key still works. It keeps its url, takes a capitalised version of the
+key as its label, and renders with a blank space where the icon would be, so it
+stays lined up with the rest. `pnpm build` prints a warning naming the key, which
+is the cue to add it to `src/.vitepress/theme/links.ts` if it deserves an icon.
+
+`email` takes a bare address — `you@example.com`, not `mailto:you@example.com`.
+
+Publications generally use `paper`, `pdf`, `video`, and `website`.
 
 ## What you can and cannot change
 

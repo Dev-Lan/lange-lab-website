@@ -22,12 +22,6 @@ In {{ $frontmatter.venue }}, {{ $frontmatter.year }}
 
 <p v-if="$frontmatter.award">{{ $frontmatter.award }}</p>
 
-<ul>
-  <li v-for="(href, label) in $frontmatter.links" :key="label">
-    <a :href="href">{{ label }}</a>
-  </li>
-</ul>
-
 ## Summary
 
 _Add a plain-language summary of this publication here._

@@ -22,6 +22,3 @@ and anything else you want people to know.
 To add a photo, drop an image in `src/public/images/team/` and point the `photo`
 field in the frontmatter at it (e.g. `/images/team/jane-doe.jpg`).
 
-## Links
-
-- [Email](mailto:example@example.com)

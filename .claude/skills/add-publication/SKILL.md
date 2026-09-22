@@ -27,7 +27,11 @@ field in use.
      ambiguous.
    - `doi` (optional) — bare, e.g. `10.1109/TVCG.2024.3456193`.
    - `award` (optional) — ask only if the venue suggests one, or they mention it.
-   - `links` (optional) — `paper`, `pdf`, `video`, `website`.
+   - `links` (optional) — usually `paper`, `pdf`, `video`, `website`. These
+     become the quick-links panel; never write them into the body as well.
+     Recognised link keys: `email`, `website`, `paper`, `pdf`, `video`, `code`,
+     `github`, `scholar`, `orcid`, `linkedin`, `mastodon`, `bluesky`. Another key
+     still renders, without an icon and with a build warning.
 
    Ask in as few rounds as possible, and only for what you could not parse.
 
@@ -46,8 +50,8 @@ field in use.
    confirm before changing it.
 
 4. **Write the file.** Copy `TEMPLATE.md`'s structure and leave the body as it
-   is: it reads title, authors, venue, and links back out of the frontmatter, so
-   none of that gets retyped. Only fill in the Summary section if the person
+   is: it reads title, authors, and venue back out of the frontmatter, and the
+   links render as the quick-links panel, so none of that gets retyped. Only fill in the Summary section if the person
    gives you one — do not write an abstract yourself, and never invent a DOI,
    award, or link that you have not been given or verified.
 

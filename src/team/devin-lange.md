@@ -37,12 +37,3 @@ I thoroughly enjoy teaching, and have had the good fortune of being an instructo
 for an Introduction to Data Structures and Algorithms course at the University of
 Utah.
 
-## Links
-
-- [Email](mailto:devinscottlange@gmail.com)
-- [Personal site](https://www.devinlange.com)
-- [GitHub](https://github.com/Dev-Lan)
-- [Google Scholar](https://scholar.google.com/citations?user=89FtTfUAAAAJ)
-- [LinkedIn](https://www.linkedin.com/in/devin-lange/)
-- [Mastodon](https://vis.social/@dev_lange)
-- [Bluesky](https://bsky.app/profile/devlange.bsky.social)

@@ -15,7 +15,7 @@ _This is a placeholder post._
 
 blurb
 
-## h2
+## how the heck do you pronounce vizoic
 
 blurb blurb
 
@@ -25,7 +25,7 @@ blurb blurb blurb
 
 blurb blurb blurb blurb
 
-##### h5
+##### what even is a vizoic
 
 blurb blurb blurb blurb blurb
 
@@ -46,7 +46,7 @@ Nulla sit amet metus ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing e
 Nulla sit amet metus ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare purus egestas, luctus nisi a, mollis sapien. Nam vel diam lectus. Pellentesque tempor odio nec ultrices pulvinar. Cras at venenatis neque. Nam vel elit congue, tempus diam et, dignissim sapien. Integer tempus lectus ut aliquam pulvinar. Integer facilisis quam varius, placerat erat nec, molestie lacus. Suspendisse tellus diam, gravida a rutrum non, pulvinar sit amet neque. Nulla blandit est ac orci efficitur, eleifend ultricies metus sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum maximus ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur eget nibh vitae odio varius mattis.
 some content
 
-## h2
+## how do you feel about west lafayette
 
 Nulla sit amet metus ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare purus egestas, luctus nisi a, mollis sapien. Nam vel diam lectus. Pellentesque tempor odio nec ultrices pulvinar. Cras at venenatis neque. Nam vel elit congue, tempus diam et, dignissim sapien. Integer tempus lectus ut aliquam pulvinar. Integer facilisis quam varius, placerat erat nec, molestie lacus. Suspendisse tellus diam, gravida a rutrum non, pulvinar sit amet neque. Nulla blandit est ac orci efficitur, eleifend ultricies metus sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum maximus ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur eget nibh vitae odio varius mattis.
 
@@ -62,7 +62,7 @@ Nulla sit amet metus ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing e
 
 Nulla sit amet metus ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare purus egestas, luctus nisi a, mollis sapien. Nam vel diam lectus. Pellentesque tempor odio nec ultrices pulvinar. Cras at venenatis neque. Nam vel elit congue, tempus diam et, dignissim sapien. Integer tempus lectus ut aliquam pulvinar. Integer facilisis quam varius, placerat erat nec, molestie lacus. Suspendisse tellus diam, gravida a rutrum non, pulvinar sit amet neque. Nulla blandit est ac orci efficitur, eleifend ultricies metus sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum maximus ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur eget nibh vitae odio varius mattis.
 
-## h2 2
+## welcome me by sending me a chocolate bar
 
 Vizoic Lab is up and running, and this is where we will post about what we are
 working on. Expect a mix of project updates, notes from conferences, and

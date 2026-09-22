@@ -23,6 +23,12 @@ show the expected shape.
      it from the post itself rather than making them compose it.
    - The post content: ask what they want to say, or work from notes, a draft, or
      a link they give you.
+   - `links` (optional) — most posts have none. If the post points at a project,
+     repo, or paper, offer to add them; they render as the quick-links panel
+     beside the post rather than in the body.
+     Recognised link keys: `email`, `website`, `paper`, `pdf`, `video`, `code`,
+     `github`, `scholar`, `orcid`, `linkedin`, `mastodon`, `bluesky`. Another key
+     still renders, without an icon and with a build warning.
 
 2. **Pick the filename.** `<date>-<short-title>.md`, lowercase with dashes:
    `2026-09-21-welcoming-new-students.md`. The date in the filename must match

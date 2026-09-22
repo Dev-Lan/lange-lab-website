@@ -6,6 +6,10 @@ description: One sentence shown under the title on the blog index.
 # Optional. The "On this page" outline lists your `##` headings automatically.
 # Uncomment to hide it for this post.
 # outline: false
+# Optional. Shown as the quick-links panel beside the post.
+# links:
+#   website: https://example.com
+#   code: https://github.com/your-handle/your-repo
 ---
 
 # Title of Your Post

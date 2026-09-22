@@ -20,7 +20,3 @@ Write a paragraph or two about yourself: what you work on, what you did before
 joining the lab, and anything else you want people to know. This is plain
 markdown, so links, lists, and headings all work.
 
-## Links
-
-- [Email](mailto:you@example.com)
-- [GitHub](https://github.com/your-handle)

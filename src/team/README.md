@@ -31,7 +31,26 @@ the team listing. Deleting your file removes you from the site.
 | `role`  | yes      | Your position, e.g. `PhD Student`. Shown under your name.                |
 | `order` | no       | Sort position on the team page, lowest first. Defaults to `99`.          |
 | `photo` | no       | Site-root path to your image, e.g. `/images/team/jane-doe.jpg`.          |
-| `links` | no       | Named links (email, website, github, scholar, …). Stored for later use.  |
+| `links` | no       | Named links shown as the quick-links panel. See below.                   |
+
+## Quick links
+
+Anything under `links` in the frontmatter is rendered as the quick-links panel:
+an icon and a name per link, in the right-hand margin on a wide screen, and at
+the bottom of the page on a narrow one. Do not also write these links into the
+body — the panel is the one place they belong now.
+
+Recognised keys, each with its own icon and label:
+
+`email`, `website`, `paper`, `pdf`, `video`, `code`, `github`, `scholar`,
+`orcid`, `linkedin`, `mastodon`, `bluesky`
+
+Any other key still works. It keeps its url, takes a capitalised version of the
+key as its label, and renders with a blank space where the icon would be, so it
+stays lined up with the rest. `pnpm build` prints a warning naming the key, which
+is the cue to add it to `src/.vitepress/theme/links.ts` if it deserves an icon.
+
+`email` takes a bare address — `you@example.com`, not `mailto:you@example.com`.
 
 ## What you can and cannot change
 

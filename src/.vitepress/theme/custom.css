@@ -1,0 +1,87 @@
+/*
+ * Quick links panel.
+ *
+ * The panel is rendered once, at the end of the content (the `doc-after` slot).
+ * That is exactly where it should sit on a narrow screen, so the base styles
+ * below are just a list; the rail is a wide-screen-only enhancement.
+ */
+
+.QuickLinks {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.QuickLinks .quick-links-title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+}
+
+.QuickLinks ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.QuickLinks li + li {
+  margin-top: 4px;
+}
+
+/* Fixed icon column: an unregistered link type renders an empty cell rather
+   than shifting its label left out of line with the others. */
+.QuickLinks a {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.QuickLinks .quick-links-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.QuickLinks .quick-links-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/*
+ * At 1280px the default theme reveals its gutter column (see VPDoc.vue). The
+ * outline occupies the left one via `aside: 'left'`; this lifts the panel into
+ * the matching space on the right, which the theme leaves empty.
+ *
+ * Widths here mirror the theme's own hard-coded values — it exposes no CSS
+ * variables for them — so a VitePress upgrade is the thing most likely to
+ * disturb this block. If it breaks, the panel falls back to sitting under the
+ * content, which is the narrow-screen presentation and still readable.
+ */
+@media (min-width: 1280px) {
+  .VPDoc.has-aside .content-container {
+    position: relative;
+  }
+
+  .VPDoc.has-aside .content-container > .QuickLinks {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% + 32px);
+    width: 224px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  /* Tracks the scroll the way the outline does. */
+  .VPDoc.has-aside .content-container > .QuickLinks .quick-links-sticky {
+    position: sticky;
+    top: calc(var(--vp-nav-height) + 48px);
+  }
+}

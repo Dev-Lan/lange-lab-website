@@ -24,6 +24,10 @@ from them. `src/team/devin-lange.md` is a filled-in example.
    - `photo` (optional) — ask whether they have one and where the file is.
    - `links` (optional) — email, website, github, scholar, linkedin, and so on.
      Ask once for whichever they want; do not interrogate them field by field.
+     Recognised link keys: `email`, `website`, `paper`, `pdf`, `video`, `code`,
+     `github`, `scholar`, `orcid`, `linkedin`, `mastodon`, `bluesky`. Another key
+     still renders, without an icon and with a build warning.
+     `email` is a bare address, not a `mailto:` url.
    - The bio itself. Offer to draft it from what they tell you, and make clear
      they can rewrite it — it is their page.
 
@@ -40,9 +44,11 @@ from them. `src/team/devin-lange.md` is a filled-in example.
    placeholder file that does not exist.
 
 4. **Write the file** by copying the structure of `TEMPLATE.md`: frontmatter,
-   then `# Name`, then the role line, then the bio, then an optional Links
-   section. Do not invent credentials, affiliations, or publications — use only
-   what the person actually told you.
+   then `# Name`, then the role line, then the bio. Links belong in the `links`
+   frontmatter and nowhere else — the site renders them as the quick-links
+   panel, so a hand-written list in the body would show up twice. Do not invent
+   credentials, affiliations, or publications — use only what the person
+   actually told you.
 
 5. **Verify.** Run `pnpm build` and confirm it succeeds, then report what you
    created: the file path, the page address (`/team/<slug>`), and the image path

@@ -11,6 +11,9 @@
     "preview": "vitepress preview src"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.136",
+    "@iconify-json/simple-icons": "^1.2.97",
+    "unplugin-icons": "^24.0.0",
     "vitepress": "^1.6.4",
     "vue": "^3.5.43"
   }

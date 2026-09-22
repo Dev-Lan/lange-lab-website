@@ -38,6 +38,28 @@ both, so the folder stays readable.
 | `author`      | yes      | Who wrote it, shown beside the date.                                   |
 | `description` | yes      | One sentence shown under the title on the blog index.                  |
 | `outline`     | no       | `false` hides the "On this page" list for this post. On by default.    |
+| `links`       | no       | Named links shown as the quick-links panel. See below.                |
+
+## Quick links
+
+Anything under `links` in the frontmatter is rendered as the quick-links panel:
+an icon and a name per link, in the right-hand margin on a wide screen, and at
+the bottom of the page on a narrow one. Do not also write these links into the
+body — the panel is the one place they belong now.
+
+Recognised keys, each with its own icon and label:
+
+`email`, `website`, `paper`, `pdf`, `video`, `code`, `github`, `scholar`,
+`orcid`, `linkedin`, `mastodon`, `bluesky`
+
+Any other key still works. It keeps its url, takes a capitalised version of the
+key as its label, and renders with a blank space where the icon would be, so it
+stays lined up with the rest. `pnpm build` prints a warning naming the key, which
+is the cue to add it to `src/.vitepress/theme/links.ts` if it deserves an icon.
+
+`email` takes a bare address — `you@example.com`, not `mailto:you@example.com`.
+
+Most posts need no links at all; the panel simply does not appear.
 
 ## What you can and cannot change
 

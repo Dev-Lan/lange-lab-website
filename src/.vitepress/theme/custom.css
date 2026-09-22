@@ -40,6 +40,12 @@
   line-height: 24px;
 }
 
+.QuickLinks .quick-links-label {
+  /* Without this the label stretches across the 1fr column and the hover
+     underline runs to the edge of the rail instead of ending with the word. */
+  justify-self: start;
+}
+
 .QuickLinks .quick-links-icon {
   display: flex;
   align-items: center;
@@ -118,5 +124,151 @@
   .VPDoc.has-aside .content-container > .QuickLinks .quick-links-sticky {
     position: sticky;
     top: calc(var(--vp-nav-height) + 48px);
+  }
+}
+
+/*
+ * Link interaction.
+ *
+ * One behaviour for every link on the site — nav bar, outline, quick links and
+ * prose. Prose keeps its underline; what it gives up is the brand colour, so
+ * that a link reads the same everywhere and only the underline marks it out
+ * mid-sentence.
+ *
+ * Hover recolours the link, then runs a single pass in which a shimmer sweeps
+ * across the text while an underline draws in beneath it, left to right.
+ *
+ * The selectors are deliberately over-qualified: the theme styles these with
+ * scoped rules, whose [data-v-…] attribute counts towards specificity, so a
+ * plainer selector loses on source order. #VPContent and the extra ancestor
+ * classes are what make these win.
+ */
+:root {
+  /* Resting colour, matching the nav bar and quick links. */
+  --vizoic-c-link: var(--vp-c-text-1);
+  /* Hover colour. This is the one to change to re-tune every link at once. */
+  --vizoic-c-link-hover: #1d4ed8;
+  /* The shimmer's single hue: the hover colour, lightened. */
+  --vizoic-c-link-shimmer: #93c5fd;
+  --vizoic-link-sweep-delay: 150ms;
+  --vizoic-link-sweep-duration: 500ms;
+}
+
+.vp-doc a:not(.header-anchor),
+.VPNav .VPNavBarMenu .VPNavBarMenuLink,
+#VPContent .VPDocAsideOutline .outline-link,
+.QuickLinks a {
+  color: var(--vizoic-c-link);
+  transition: color 0.25s;
+}
+
+.VPNav .VPNavBarMenu .VPNavBarMenuLink > span {
+  /* The link's line-height is the full nav bar height, so this span's box runs
+     the depth of the bar and its hover underline would be drawn at the bar's
+     bottom edge. The link is a centring flex container, so tightening the
+     span's line-height moves nothing but the box it draws in. */
+  line-height: 1.5;
+}
+
+.vp-doc a:not(.header-anchor):hover,
+.VPNav .VPNavBarMenu .VPNavBarMenuLink:hover,
+#VPContent .VPDocAsideOutline .outline-link:hover,
+.QuickLinks a:hover {
+  color: var(--vizoic-c-link-hover);
+  text-decoration-color: var(--vizoic-c-link-hover);
+}
+
+/*
+ * The sweep. Two background layers animated by one set of keyframes, so the
+ * shimmer and the underline cannot drift apart:
+ *
+ *   layer 1  the drawn underline — a solid bar whose width grows 0 → 100%
+ *   layer 2  the shimmer — a gradient twice the text's width, clipped to the
+ *            glyphs and slid right to left, which carries its bright band left
+ *            to right across the text
+ *
+ * Both ends of the shimmer gradient are the hover colour, so outside the band
+ * the link simply looks hovered.
+ *
+ * Note what these selectors target: the element that hugs the *text*, not the
+ * link box. A prose link already wraps its own text, but a nav item, an outline
+ * entry and a quick-links row are all wider than their labels, and drawing on
+ * the box there produces a rule across the column rather than an underline.
+ * Hence the inner spans, and max-content on the outline entry — which still
+ * yields to the container's width, so long titles keep their ellipsis.
+ *
+ * Prose links already carry a native underline. Rather than switching it off
+ * and leaving a gap, the keyframes fade it to transparent as the drawn line
+ * advances, so the underline is continuously present — the old one dissolving
+ * while the new one is laid down. Elsewhere that part is simply inert.
+ *
+ * `both` fill mode holds the start state through the delay; without it the
+ * link would flash unclipped before the sweep began.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  #VPContent .VPDocAsideOutline .outline-link:hover {
+    max-width: max-content;
+  }
+
+  .vp-doc a:not(.header-anchor):hover,
+  .VPNav .VPNavBarMenu .VPNavBarMenuLink:hover > span,
+  #VPContent .VPDocAsideOutline .outline-link:hover,
+  .QuickLinks a:hover .quick-links-label {
+    background-image:
+      linear-gradient(var(--vizoic-c-link-hover), var(--vizoic-c-link-hover)),
+      linear-gradient(
+        100deg,
+        var(--vizoic-c-link-hover) 0 45%,
+        var(--vizoic-c-link-shimmer) 50%,
+        var(--vizoic-c-link-hover) 55% 100%
+      );
+    background-repeat: no-repeat, no-repeat;
+    /* The underline is clipped to the box, the shimmer to the glyphs. */
+    -webkit-background-clip: border-box, text;
+    background-clip: border-box, text;
+    -webkit-text-fill-color: transparent;
+    /* Each line of a wrapped link gets its own underline. */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    animation: vizoic-link-sweep var(--vizoic-link-sweep-duration) ease-out
+      var(--vizoic-link-sweep-delay) 1 both;
+  }
+}
+
+/*
+ * Why the shimmer image is 250% of the text's width.
+ *
+ * The band sits at 45–55% along the image, so with an image k times the text's
+ * width it spans 0.45k to 0.55k text-widths. At background-position 0 the
+ * visible window is the image's first text-width, and at 100% it is the last;
+ * for the band to be clear of the text at both ends, 0.45k > 1 and
+ * 0.55k < k - 1 — that is, k > 2.22. At 220% the band's leading edge stayed
+ * parked on the last tenth of the link after the sweep, which is what this
+ * fixes. k is kept just above the threshold so the band spends most of the
+ * duration crossing the text and stays in step with the underline; at 300% it
+ * had finished sweeping by the time the underline was four-fifths drawn.
+ *
+ * Overshooting the position instead (130% to -30%) does not work: the gradient
+ * is no-repeat, so once it is dragged past the edge it stops covering the text,
+ * and since the glyphs are painted by that gradient they vanish.
+ */
+@keyframes vizoic-link-sweep {
+  from {
+    background-size:
+      0% 2px,
+      250% 100%;
+    background-position:
+      0 100%,
+      100% 0;
+    text-decoration-color: var(--vizoic-c-link-hover);
+  }
+  to {
+    background-size:
+      100% 2px,
+      250% 100%;
+    background-position:
+      0 100%,
+      0 0;
+    text-decoration-color: transparent;
   }
 }

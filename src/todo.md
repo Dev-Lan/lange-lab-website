@@ -9,3 +9,4 @@
 - initial publish to correct website.
 - publication rendering pipeline
 - add sections (preprint, dissertation, etc)
+- add a copyright

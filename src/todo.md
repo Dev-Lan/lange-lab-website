@@ -1,5 +1,11 @@
-3. add consistent quick-links visual / placement (publications / user profiles / blogs)
-1. initial publish to correct website.
-1. add under construction / early access
-
-1. clean up outline thingy
+- consistent links style
+- clean up content
+  - home page text
+  - home page image
+  - delete templates
+- add under construction / early access
+- publiction citation (rip from visubs and add plain text toggle)
+- hover links and nav bar elements should have a nice hover effect
+- initial publish to correct website.
+- publication rendering pipeline
+- add sections (preprint, dissertation, etc)

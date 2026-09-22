@@ -54,16 +54,51 @@
 }
 
 /*
- * At 1280px the default theme reveals its gutter column (see VPDoc.vue). The
- * outline occupies the left one via `aside: 'left'`; this lifts the panel into
- * the matching space on the right, which the theme leaves empty.
+ * Wide-screen layout.
  *
- * Widths here mirror the theme's own hard-coded values — it exposes no CSS
- * variables for them — so a VitePress upgrade is the thing most likely to
- * disturb this block. If it breaks, the panel falls back to sitting under the
- * content, which is the narrow-screen presentation and still readable.
+ * The theme lays the aside and the content out as a centered flex row, which
+ * means the text column sits off-centre by half the gutter's width — visible as
+ * a lopsided left margin once the outline moved to the left.
+ *
+ * Instead: a three-track grid whose outer tracks are flexible and whose middle
+ * track is the content. The text column is therefore centred in the viewport at
+ * every width, and the two gutters live in the space either side of it. The
+ * outline occupies the left track; the quick-links panel is positioned into the
+ * right one. Neither can push the text off-centre, and on a narrow viewport
+ * both simply stop being shown.
+ *
+ * Widths and the breakpoint mirror the theme's own hard-coded values (VPDoc.vue
+ * exposes no variables for them), so a VitePress upgrade is what would most
+ * likely disturb this. It degrades to the panel sitting under the content.
  */
 @media (min-width: 1280px) {
+  /* The #VPContent prefix is load-bearing: the theme's styles are scoped, and a
+     scoped [data-v-…] attribute selector ties the specificity of a plain class
+     selector, so `.VPDoc.has-aside .container` alone silently loses to
+     VPDoc.vue's own `display: flex` and `max-width` on source order. */
+  #VPContent .VPDoc.has-aside .container {
+    display: grid;
+    /* minmax(0, …) on both flanks: the left track would otherwise inherit a
+       min-content floor from the outline and grow wider than the right one,
+       nudging the text off-centre at the narrowest width that shows gutters. */
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    /* The theme caps the row at 992px/1104px and centres that; the tracks
+       centre the text column themselves now, so the cap has to go. */
+    max-width: none;
+    margin: 0;
+  }
+
+  #VPContent .VPDoc.has-aside .aside {
+    grid-column: 1;
+    justify-self: end;
+    width: 256px;
+  }
+
+  #VPContent .VPDoc.has-aside .content {
+    grid-column: 2;
+    margin: 0;
+  }
+
   .VPDoc.has-aside .content-container {
     position: relative;
   }

@@ -24,6 +24,16 @@ export default defineConfig({
     plugins: [Icons({ compiler: 'vue3' })]
   },
 
+  // An individual publication page is a citation plus an optional summary — it
+  // has nothing worth jumping between, so it never gets an outline. Done here
+  // rather than as frontmatter in every file so new publications inherit it.
+  transformPageData(pageData) {
+    const path = pageData.relativePath
+    if (path.startsWith('publications/') && path !== 'publications/index.md') {
+      pageData.frontmatter.outline = false
+    }
+  },
+
   markdown: {
     // Anchor every heading except the page title, so the clickable "#" links
     // line up exactly with the range the outline lists (see themeConfig.outline).

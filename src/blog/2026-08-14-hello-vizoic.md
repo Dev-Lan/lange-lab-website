@@ -3,6 +3,14 @@ title: Hello from Vizoic Lab
 date: 2026-08-14
 author: Devin Lange
 description: A first post introducing the lab and what we plan to write about here.
+links:
+  email: devinscottlange@gmail.com
+  website: https://www.devinlange.com
+  github: https://github.com/Dev-Lan
+  scholar: https://scholar.google.com/citations?user=89FtTfUAAAAJ
+  linkedin: https://www.linkedin.com/in/devin-lange/
+  mastodon: https://vis.social/@dev_lange
+  bluesky: https://bsky.app/profile/devlange.bsky.social
 ---
 
 # Hello from Vizoic Lab

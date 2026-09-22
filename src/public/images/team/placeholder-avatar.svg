@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Placeholder avatar">
+  <!-- Anonymous silhouette for the open-position card. Sized and positioned to
+       match a cut-out headshot: square, subject standing on the bottom edge. -->
+  <circle cx="100" cy="72" r="38" fill="#c5c9d2" />
+  <path d="M100 116c-40 0-72 30-76 84h152c-4-54-36-84-76-84z" fill="#c5c9d2" />
+</svg>

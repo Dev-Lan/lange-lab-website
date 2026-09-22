@@ -20,8 +20,3 @@ import { data as groups } from './team.data.mts'
     </a>
   </div>
 </template>
-
-## You could be here
-
-We are looking for students and postdocs interested in visualization for
-biomedical data. If that sounds like you, get in touch.

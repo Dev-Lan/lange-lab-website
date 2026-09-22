@@ -172,6 +172,11 @@
 
 .team-card-name {
   display: block;
+  /* Hugs the name so the hover underline ends with the text rather than running
+     the full width of the photo above it. */
+  width: fit-content;
+  margin-left: 8px;
+  max-width: 100%;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
@@ -179,6 +184,9 @@
 
 .team-card-position {
   display: block;
+  /* Indented rather than flush with the photo's edge, so it reads as a
+     subordinate line under the name. */
+  margin-left: 8px;
   font-size: 13px;
   line-height: 1.4;
   color: var(--vp-c-text-2);

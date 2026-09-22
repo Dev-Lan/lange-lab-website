@@ -18,6 +18,8 @@ links:
 
 Principal Investigator, Vizoic Lab
 
+I am an Assistant Professor at Purdue University in the School of Applied and Creative Computing and the... todo
+
 I am a postdoctoral research fellow in the
 [Department of Biomedical Informatics](https://dbmi.hms.harvard.edu/) at
 [Harvard Medical School](https://hms.harvard.edu/) and a member of Nils

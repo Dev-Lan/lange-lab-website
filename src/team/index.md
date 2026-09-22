@@ -18,7 +18,3 @@ import { data as people } from './team.data.mts'
 
 We are looking for students and postdocs interested in visualization for
 biomedical data. If that sounds like you, get in touch.
-
-Lab members maintain their own profile page: copy `src/team/TEMPLATE.md` in the
-site repository, rename it, and edit it. `src/team/README.md` in the same folder
-walks through the whole process. The listing above updates itself.

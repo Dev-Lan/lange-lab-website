@@ -11,7 +11,14 @@ import { data as groups } from './team.data.mts'
 <template v-for="group in groups" :key="group.key">
   <h2>{{ group.label }}</h2>
   <div class="team-grid">
-    <a v-for="person in group.people" :key="person.url" class="team-card" :href="person.url">
+    <a
+      v-for="person in group.people"
+      :key="person.href"
+      class="team-card"
+      :href="person.href"
+      :target="person.external ? '_blank' : null"
+      :rel="person.external ? 'noreferrer' : null"
+    >
       <span class="team-card-photo">
         <img v-if="person.photo" :src="person.photo" :alt="person.name" loading="lazy" />
       </span>

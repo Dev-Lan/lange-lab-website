@@ -5,6 +5,9 @@ group: member
 # Your title, shown on your card: Postdoc, PhD Student, Assistant Professor, …
 position: PhD Student
 order: 50
+# Optional. Points your card at another url instead of a profile page. If you
+# set this, no page is built from this file — the card is all it produces.
+# overrideUrl: https://example.com/your-site
 # Optional. Add your image to src/public/images/team/ first, then point here.
 # photo: /images/team/your-name.jpg
 # Every link below is optional — delete the ones you do not want shown.

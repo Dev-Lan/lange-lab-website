@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import Icons from 'unplugin-icons/vite'
+import { profilesWithOverrideUrl } from './lib/team-pages.mts'
 
 export default defineConfig({
   title: 'Vizoic Lab',
@@ -12,7 +13,9 @@ export default defineConfig({
 
   // Repo docs and copy-me templates live beside the content they describe, but
   // they are not pages. Keep this in sync with isContentPage() in lib/content.mts.
-  srcExclude: ['**/README.md', '**/TEMPLATE.md'],
+  // Team profiles that set `overrideUrl` are dropped too: their card points
+  // elsewhere, so a profile page for them would be unreachable.
+  srcExclude: ['**/README.md', '**/TEMPLATE.md', ...profilesWithOverrideUrl()],
 
   // Light theme only: this also removes the appearance toggle from the nav bar.
   appearance: false,

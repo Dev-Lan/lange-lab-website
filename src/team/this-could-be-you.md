@@ -4,16 +4,11 @@ group: member
 position: apply today
 photo: /images/team/placeholder-avatar.svg
 order: 99
+# Sends the card to the positions page instead of a profile page. Because this
+# is set, no page is built from this file — see srcExclude in config.mts.
+overrideUrl: /positions
 ---
 
-# This could be you
-
-We are looking for people interested in visualization for biomedical data —
-PhD students, postdocs, and interns.
-
-You do not need to have worked in visualization before. If you are curious about
-how people make sense of complex scientific data, and you like building things,
-get in touch. Tell us what you have been working on and what you would want to
-work on here.
-
-Write to [devinscottlange@gmail.com](mailto:devinscottlange@gmail.com).
+This file exists only to place a card on the team page; `overrideUrl` above
+sends that card to `/positions`, and no page is built from this file. Anything
+written here is not published.

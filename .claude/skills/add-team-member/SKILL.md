@@ -34,6 +34,9 @@ from them. `src/team/devin-lange.md` is a filled-in example.
      `github`, `scholar`, `orcid`, `linkedin`, `mastodon`, `bluesky`. Another key
      still renders, without an icon and with a build warning.
      `email` is a bare address, not a `mailto:` url.
+   - `overrideUrl` (optional, rare) — only if their card should link somewhere
+     else entirely rather than to a profile page here. Setting it means no page
+     is built from the file, so do not write a bio into one that has it.
    - The bio itself. Offer to draft it from what they tell you, and make clear
      they can rewrite it — it is their page.
 

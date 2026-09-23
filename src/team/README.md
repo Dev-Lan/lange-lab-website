@@ -40,6 +40,24 @@ from the site.
 | `order` | no       | Sort position on the team page, lowest first. Defaults to `99`.          |
 | `photo` | no       | Site-root path to your image, e.g. `/images/team/jane-doe.jpg`.          |
 | `links` | no       | Named links shown as the quick-links panel. See below.                   |
+| `overrideUrl` | no | Sends your card somewhere else instead of to a profile page. See below. |
+
+## Linking a card elsewhere
+
+Normally a card links to the profile page built from its own file. Setting
+`overrideUrl` points it somewhere else instead — a personal site, a lab you
+moved to, or another page on this site:
+
+```yaml
+overrideUrl: https://example.com/your-site
+```
+
+When it is set, **no page is built from that file**. The card is the only thing
+the file produces, so anything you write in the body is not published. An
+external address opens in a new tab; a path like `/positions` does not.
+
+This is what the "This could be you!" card uses to send people to the positions
+page rather than to a profile that does not exist.
 
 ## Quick links
 

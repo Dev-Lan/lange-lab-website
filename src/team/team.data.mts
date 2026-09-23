@@ -19,7 +19,11 @@ export default createContentLoader('team/*.md', {
     const people = raw
       .filter((page) => isContentPage(page.url))
       .map(({ url, frontmatter }) => ({
-        url,
+        // Where the card points. A profile with `overrideUrl` has no page of
+        // its own — config.mts keeps it out of the build — so the card links
+        // wherever the frontmatter says instead.
+        href: frontmatter.overrideUrl || url,
+        external: isExternal(frontmatter.overrideUrl),
         name: frontmatter.name,
         // The granular title shown on the card: Postdoc, PhD Student, and so on.
         position: frontmatter.position ?? '',
@@ -36,6 +40,10 @@ export default createContentLoader('team/*.md', {
     })).filter((group) => group.people.length > 0)
   }
 })
+
+function isExternal(url: string | undefined) {
+  return typeof url === 'string' && /^[a-z][a-z0-9+.-]*:/i.test(url)
+}
 
 // An unknown group is never fatal — the person still appears, filed under the
 // fallback section, and the build says so.

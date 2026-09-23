@@ -13,3 +13,6 @@
 - add a copyright
 - add snippet of explanation on publicaitons page
 - why is there an HR on example blog
+- extra HRs in general
+- some pages might not always need the H1 at top, or make it conditional (only for phones)
+- underline current page in navbar.

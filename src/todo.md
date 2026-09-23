@@ -2,10 +2,9 @@
   - home page text
   - home page image
   - delete template
-  - remove other blogs
-- reformat the team page.
-- add under construction / early access
-- publiction citation (rip from visubs and add plain text toggle)
+  - double check pubs, add description text, or allow simple pubs
+
+- publication citation (rip from visubs and add plain text toggle)
 - hover links and nav bar elements should have a nice hover effect
 - initial publish to correct website.
 - publication rendering pipeline

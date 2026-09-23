@@ -91,6 +91,10 @@ pnpm install   # first time only
 pnpm dev       # then open the printed URL and visit /publications/
 ```
 
+Editing `publications.bib` updates both the listing and each publication's page
+while the dev server runs — the page addresses are generated from the file, so a
+custom watcher in `.vitepress/config.mts` refreshes them on every save.
+
 Before committing, run `pnpm build`. It fails on broken internal links and
 prints a warning for any unrecognised `link_*` type.
 

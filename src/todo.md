@@ -7,10 +7,10 @@ Home page:
 
 publications:
 
-- publication citation (rip from visubs and add plain text toggle)
-- nicer overview page
-  x add sections (preprint, dissertation, etc)
-- add snippet of explanation on publicaitons page
+- remove underlines
+- spacing when no image?
+- full publication data (pages, volumes, etc)
+- export to latex for cv
 
 - publication rendering pipeline
 
@@ -31,3 +31,5 @@ Global:
 - nav bar whimsy? bar chart trees/grass/
 
 - initial publish to correct website.
+- add link to CV here on personal page
+- update personal page to refer to this one

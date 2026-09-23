@@ -1,6 +1,39 @@
+import { utimesSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import Icons from 'unplugin-icons/vite'
 import { profilesWithOverrideUrl } from './lib/team-pages.mts'
+import { BIB_PATH } from './lib/publications.mts'
+
+/**
+ * Publication pages are dynamic routes whose params VitePress resolves once,
+ * and it re-resolves them only when a file in the paths module's *import* graph
+ * changes. publications.bib is read at run time rather than imported, so
+ * editing it leaves every publication page serving stale data — while the
+ * listing, a data loader with its own `watch`, updates immediately.
+ *
+ * Touching the paths file is what puts them back in step: VitePress keys its
+ * route-module cache on that file, so a change to it clears the cache,
+ * re-resolves the routes (re-reading the .bib) and invalidates the pages.
+ * Restarting the server does not work — the cache is module-scoped and outlives
+ * a restart. Dev only; the build reads the .bib fresh anyway.
+ */
+function watchPublicationsBib() {
+  const PATHS_FILE = fileURLToPath(
+    new URL('../publications/[slug].paths.mts', import.meta.url)
+  )
+  return {
+    name: 'vizoic:watch-publications-bib',
+    configureServer(server: { watcher: { add(path: string): void } }) {
+      server.watcher.add(BIB_PATH)
+    },
+    handleHotUpdate({ file }: { file: string }) {
+      if (file !== BIB_PATH) return
+      const now = new Date()
+      utimesSync(PATHS_FILE, now, now)
+    }
+  }
+}
 
 export default defineConfig({
   title: 'Vizoic Lab',
@@ -24,7 +57,7 @@ export default defineConfig({
     // Icons are imported as components (`~icons/lucide/mail`) and bundled at
     // build time, so nothing is fetched at runtime. Sets: lucide for generic
     // glyphs, simple-icons for brand marks.
-    plugins: [Icons({ compiler: 'vue3' })]
+    plugins: [Icons({ compiler: 'vue3' }), watchPublicationsBib()]
   },
 
   // An individual publication page is a citation plus an optional summary — it

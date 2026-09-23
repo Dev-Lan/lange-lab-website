@@ -8,7 +8,7 @@ import { teamProfileHrefs } from './team-pages.mts'
 const require = createRequire(import.meta.url)
 const bibtexParse = require('bibtex-parse')
 
-const BIB_PATH = fileURLToPath(
+export const BIB_PATH = fileURLToPath(
   new URL('../../publications/publications.bib', import.meta.url)
 )
 

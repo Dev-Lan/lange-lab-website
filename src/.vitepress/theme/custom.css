@@ -251,6 +251,27 @@
 }
 
 /*
+ * The nav item for the section you are in wears the end state of the sweep:
+ * the hover colour and a fully drawn underline, without the animation.
+ *
+ * These rules sit before the hover rules and tie them on specificity, so
+ * hovering the active item still re-runs the sweep over the top.
+ */
+.VPNav .VPNavBarMenu .VPNavBarMenuLink.active {
+  color: var(--vizoic-c-link-hover);
+}
+
+.VPNav .VPNavBarMenu .VPNavBarMenuLink.active > span {
+  background-image: linear-gradient(
+    var(--vizoic-c-link-hover),
+    var(--vizoic-c-link-hover)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: 0 100%;
+}
+
+/*
  * The sweep. Two background layers animated by one set of keyframes, so the
  * shimmer and the underline cannot drift apart:
  *

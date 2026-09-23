@@ -51,11 +51,14 @@ export default defineConfig({
     // h2 through h6 — the same headings that get a clickable "#" anchor.
     outline: 'deep',
 
+    // activeMatch keeps a section's nav item lit on its child pages too —
+    // without it the theme only matches a link's exact path, so reading a
+    // profile or a paper would leave the nav bar showing nothing as current.
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Team', link: '/team/' },
-      { text: 'Publications', link: '/publications/' },
-      { text: 'Blog', link: '/blog/' }
+      { text: 'Team', link: '/team/', activeMatch: '^/team/' },
+      { text: 'Publications', link: '/publications/', activeMatch: '^/publications/' },
+      { text: 'Blog', link: '/blog/', activeMatch: '^/blog/' }
     ]
   }
 })

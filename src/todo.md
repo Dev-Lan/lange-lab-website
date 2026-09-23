@@ -13,8 +13,8 @@
 - add sections (preprint, dissertation, etc)
 - add snippet of explanation on publicaitons page
 - why is there an HR on example blog
-- extra HRs in general
-- some pages might not always need the H1 at top, or make it conditional (only for phones)
+  - extra HRs in general
+  - some pages might not always need the H1 at top, or make it conditional (only for phones)
 - underline current page in navbar.
 
 - add a copyright

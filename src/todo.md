@@ -9,6 +9,7 @@ publications:
 
 - remove underlines
 - spacing when no image?
+- award color
 - full publication data (pages, volumes, etc)
 - export to latex for cv
 
@@ -24,6 +25,8 @@ Blog:
 
 Global:
 
+- hover color in phone navbar/ current selection?
+- hover color for icon only? (shimmer inside out?)
 - why is there an HR on example blog
 - extra HRs in general
 - some pages might not always need the H1 at top, or make it conditional (only for phones)

@@ -6,8 +6,6 @@ outline: false
 import { data as groups } from './team.data.mts'
 </script>
 
-# Team
-
 <template v-for="group in groups" :key="group.key">
   <h2>{{ group.label }}</h2>
   <div class="team-grid">

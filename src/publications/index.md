@@ -14,8 +14,6 @@ const byYear = computed(() => {
 })
 </script>
 
-# Publications
-
 <template v-for="group in byYear" :key="group.year">
   <!-- Mirrors the markup markdown headings get, so these behave the same:
        an id for the outline, and a "#" anchor link for copying a link to the year. -->

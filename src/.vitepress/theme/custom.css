@@ -128,6 +128,17 @@
 }
 
 /*
+ * The theme gives every h2 a top border, which reads as a stray rule under the
+ * page title wherever the first section heading follows the h1 directly. The
+ * padding goes with it — the theme pairs 24px with the line, and keeping it
+ * would hold open the gap where the rule used to be. The 48px top margin stays.
+ */
+.vp-doc h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/*
  * Team cards.
  *
  * The photo sits in a fixed square on a tinted panel, cropped to fill it. That

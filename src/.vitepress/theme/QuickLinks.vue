@@ -3,10 +3,15 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { resolveLinks } from './links'
 
-const { frontmatter, page } = useData()
+const { frontmatter, page, params } = useData()
 
+// Generated pages (publication detail routes) carry their links in route
+// params rather than frontmatter, since one markdown template serves them all.
 const links = computed(() =>
-  resolveLinks(frontmatter.value.links, page.value.relativePath)
+  resolveLinks(
+    frontmatter.value.links ?? params.value?.links,
+    page.value.relativePath
+  )
 )
 </script>
 

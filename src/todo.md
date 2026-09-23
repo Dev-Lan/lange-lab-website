@@ -9,7 +9,7 @@ publications:
 
 - publication citation (rip from visubs and add plain text toggle)
 - nicer overview page
-- add sections (preprint, dissertation, etc)
+  x add sections (preprint, dissertation, etc)
 - add snippet of explanation on publicaitons page
 
 - publication rendering pipeline

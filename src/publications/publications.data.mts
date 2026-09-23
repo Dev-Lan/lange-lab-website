@@ -1,24 +1,16 @@
-import { createContentLoader } from 'vitepress'
-import { isContentPage } from '../.vitepress/lib/content.mts'
+import { loadPublications } from '../.vitepress/lib/publications.mts'
 
-// One markdown file per publication in this folder. The frontmatter is kept as
-// unformatted data (authors as a list, bare DOI, venue and year separate) so the
-// same files can later be the single source of truth for a CV as well. See
-// README.md for how to add one; TEMPLATE.md is the file to copy.
-export default createContentLoader('publications/*.md', {
-  transform(raw) {
-    return raw
-      .filter((page) => isContentPage(page.url))
-      .map(({ url, frontmatter }) => ({
-        url,
-        title: frontmatter.title,
-        authors: frontmatter.authors ?? [],
-        venue: frontmatter.venue,
-        year: frontmatter.year,
-        type: frontmatter.type,
-        doi: frontmatter.doi,
-        award: frontmatter.award
-      }))
-      .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
+/**
+ * The listing data. Everything comes from publications.bib — see
+ * lib/publications.mts for the parsing and README.md for how to add an entry.
+ *
+ * The abstract and the raw BibTeX are dropped here: the overview does not show
+ * them, and shipping 18 abstracts to every visitor of the listing page would be
+ * most of its weight. The detail pages carry their own copy.
+ */
+export default {
+  watch: ['./publications.bib'],
+  load() {
+    return loadPublications().map(({ abstract, bibtex, ieee, ...rest }) => rest)
   }
-})
+}

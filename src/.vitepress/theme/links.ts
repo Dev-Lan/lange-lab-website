@@ -6,12 +6,18 @@ import FileText from '~icons/lucide/file-text'
 import FileDown from '~icons/lucide/file-down'
 import Video from '~icons/lucide/video'
 import Code from '~icons/lucide/code'
+import Database from '~icons/lucide/database'
+import Presentation from '~icons/lucide/presentation'
+import LinkIcon from '~icons/lucide/link'
 import GitHub from '~icons/simple-icons/github'
 import Scholar from '~icons/simple-icons/googlescholar'
 import Orcid from '~icons/simple-icons/orcid'
 import LinkedIn from '~icons/simple-icons/linkedin'
 import Mastodon from '~icons/simple-icons/mastodon'
 import Bluesky from '~icons/simple-icons/bluesky'
+
+/** Stands in wherever a link type has no icon of its own. */
+export const FALLBACK_ICON = LinkIcon
 
 export interface ResolvedLink {
   key: string
@@ -29,6 +35,8 @@ const REGISTRY: Record<string, { label: string; icon: Component }> = {
   pdf: { label: 'PDF', icon: FileDown },
   video: { label: 'Video', icon: Video },
   code: { label: 'Code', icon: Code },
+  data: { label: 'Data', icon: Database },
+  slides: { label: 'Slides', icon: Presentation },
   github: { label: 'GitHub', icon: GitHub },
   scholar: { label: 'Google Scholar', icon: Scholar },
   orcid: { label: 'ORCID', icon: Orcid },

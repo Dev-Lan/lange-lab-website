@@ -1,0 +1,250 @@
+% Publications for the Vizoic Lab website.
+%
+% This file is the single source of truth: standard BibTeX fields so it also
+% works in LaTeX, plus a few custom fields the site reads. BibTeX styles ignore
+% fields they do not recognise, so the extras are harmless in a bibliography.
+%
+%   slug       the page address, /publications/<slug>
+%   venuename  how the venue is shown on the site, when it differs from the
+%              canonical journal / booktitle / school / howpublished
+%   image      teaser image, a path under src/public
+%   award      award text, shown as a badge
+%   link_*     one per link; the suffix is a key the site knows how to label
+%              and illustrate (paper, pdf, video, website, code, data, slides)
+%
+% Write accented characters directly (Pettré, Kouřil) rather than as LaTeX
+% escapes. Do escape & as \& — the site unescapes it for display.
+%
+% See README.md in this folder for how to add an entry.
+
+@article{rahman2026annotations,
+  title    = {Designing Annotations in Visualization: Considerations from Visualization Practitioners and Educators},
+  author   = {Rahman, Md Dilshadur and Lange, Devin and Quadri, Ghulam Jilani and Rosen, Paul},
+  journal  = {Computer Graphics Forum},
+  year     = {2026},
+  doi      = {10.1111/cgf.70435},
+  slug     = {2026-annotations},
+  abstract = {Annotation is a central mechanism in visualization design that enables people to communicate key insights. Prior research has provided essential accounts of the visual forms annotations take, but less attention has been paid to the decisions behind them. This paper examines how annotations are designed in practice and how educators reflect on those practices. We conducted a two-phase qualitative study: interviews with ten practitioners from diverse backgrounds revealed the heuristics they draw on when creating annotations, and interviews with seven visualization educators offered complementary perspectives situated within broader concerns of clarity, guidance, and viewer agency. These studies provide a systematic account of annotation design knowledge in professional settings, highlighting the considerations, trade-offs, and contextual judgments that shape the use of annotations. By making this tacit expertise explicit, our work complements prior form-focused studies, strengthens understanding of annotation as a design activity, and points to opportunities for improved tool and guideline support.}
+}
+
+@article{zitnay2026quilpen,
+  title    = {QUILPEN Provides Independent and Label-Free Single-Cell Quantification of Pigmentation Dynamics and Organelle Content},
+  author   = {Zitnay, Rebecca G. and Alizada, Shukran and Moustafa, Tarek E. and Lange, Devin and Schreiber, Luke and Lex, Alexander and Judson-Torres, Robert L. and Zangle, Thomas A. and Belote, Rachel L.},
+  journal  = {Pigment Cell \& Melanoma Research},
+  year     = {2026},
+  doi      = {10.1111/pcmr.70080},
+  slug     = {2026-quilpen},
+  abstract = {The relationship between melanogenesis, pigmentation, and melanocyte behavior is complex. In melanocytes, pigmentation is often associated with differentiation, yet mature melanocytes vary in pigment content. In melanoma, pigmentation-linked transcriptional programs may have prognostic value, but visual assessments of tumor pigmentation have yielded inconsistent results. Progress linking pigmentation phenotypes to cell state has been limited by a lack of tools that can directly and dynamically quantify melanin content in live cells. Here we present QUantitative Imaging of Label-free Pigment-associated ENtities (QUILPEN), a label-free multimodal imaging technique that combines quantitative phase imaging (QPI), quadrant darkfield (QDF), and absorption imaging to independently capture light that has been transmitted, scattered, and absorbed. This nondestructive method enables live-cell imaging over multiple days without labels. We show absorption as a reliable readout of melanin content, which can be decoupled from melanosome content detected by QDF, which measures scattered light. Applying QUILPEN to melanoma cells before and during repigmentation, we find that melanin content is highly heterogeneous, and that this heterogeneity is reinstated upon repigmentation. Lineage tracking further reveals that melanin synthesis rates are heritable and can be transmitted both symmetrically and asymmetrically. QUILPEN enables real-time quantification of pigmentation dynamics and cell-level heterogeneity.}
+}
+
+@misc{vandenbrandt2026agentic,
+  title         = {Agentic Authoring of Interactive Multiview Visualizations in Genomics},
+  author        = {van den Brandt, Astrid and Choe, Kiroong and L'Yi, Sehi and Lange, Devin and Gehlenborg, Nils},
+  year          = {2026},
+  eprint        = {2606.00370},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.HC},
+  howpublished  = {arXiv:2606.00370},
+  venuename     = {arXiv preprint},
+  slug          = {2026-agentic-authoring},
+  link_paper    = {https://arxiv.org/abs/2606.00370},
+  link_pdf      = {https://arxiv.org/pdf/2606.00370},
+  link_data     = {https://osf.io/uqe83},
+  abstract      = {Diverse genomics data, scientific questions, and analysis tasks typically demand highly specialized visualizations. Therefore, users often must customize or author new ones tailored to their data. Existing tools are usually either limited in customization or require substantial learning or programming, and even expressive tools assume visualization expertise many users lack. Agentic and large language model (LLM) approaches are increasingly applied to complex scientific tasks, including visualization. Natural-language conversational interfaces offer a promising path to democratizing the authoring of complex visualizations. In the context of genomics, these approaches face additional challenges: genomics visualizations typically integrate heterogeneous data types and are composed of multiple linked interactive views. These challenges motivate more structured LLM-based schemes. We first characterize where vanilla LLM generation succeeds and fails for genomics visualization, identifying eight quality dimensions. We then compare six schemes---direct generation, a fixed pipeline, and four agentic configurations varying in the number of specialist agents and the presence of a reviewer---across 159 cases spanning three levels of query ambiguity and specification complexity. All schemes use the Gosling visualization grammar as structured output. Agentic iteration substantially improves perceived quality over both baselines, while more complex agent architectures yield no additional benefit. We discuss implications for designing agentic systems for domain-specific visualization authoring.}
+}
+
+@inproceedings{lange2025dqvis,
+  title      = {DQVis Dataset: Natural Language to Biomedical Visualization},
+  author     = {Lange, Devin and Sui, Pengwei and Gao, Shanghua and Zitnik, Marinka and Gehlenborg, Nils},
+  booktitle  = {Advances in Neural Information Processing Systems, Datasets and Benchmarks Track},
+  year       = {2025},
+  venuename  = {39th Conference on Neural Information Processing Systems (NeurIPS 2025) Track on Datasets and Benchmarks},
+  slug       = {2025-dqvis},
+  image      = {/images/publications/2025-dqvis.png},
+  link_paper = {https://openreview.net/forum?id=AnJaRzEZZs},
+  link_pdf   = {https://openreview.net/pdf/4b20780b4cc521df9459f434e1f957a52bf6416d.pdf},
+  abstract   = {Biomedical research data portals are essential resources for scientific inquiry, and interactive exploratory visualizations are an integral component for querying such data repositories. Increasingly, machine learning is being integrated into visualization systems to create natural language interfaces where questions about data can be answered with visualizations, and follow-up questions can build on the previous state. This paper introduces a framework that takes abstract low-level questions about data and a visualization grammar specification that can answer such a question, reifies them with data entities and fields that meet certain constraints, and paraphrases the question language to produce the final collection of realized data-question-visualization triplets. Furthermore, we can link these foundational elements together to construct chains of queries, visualizations, and follow-up queries. We developed an open-source review interface for evaluating the results of these datasets. We applied this framework to five biomedical research data repositories, resulting in DQVis, a dataset of 1.08 million data-question-visualization triplets and 11.4 thousand two-step question samples. Five visualization experts provided feedback on the generated dataset through our review interface. We present a summary of their input and publish the full reviews as an additional resource alongside the dataset.}
+}
+
+@article{zhang2025brn2,
+  title    = {A BRN2:MYC Transcriptional Axis Regulates Interconversion Between Therapy-Resistant and Tumorigenic Phenotypes in Melanoma},
+  author   = {Zhang, Yuntian and Urquijo, Marcus A. and Zitnay, Rebecca G. and Marks, Kayla and Belote, Rachel L. and Hansen, Maike M.K. and Ferita, Montana and Neuendorf, Hannah and Liu, Tong and Smith, Eric A. and Mirzaei Mehrabad, Elnaz and Hejna, Miroslav and Moustafa, Tarek E. and Lange, Devin and Hu, Min and Vand-Rajabpour, Fatemeh and Done, Anne and Becker, Carly A. and Lieberman, Matthew and Chang, Matthew and Lohman, Brian K. and Stubben, Chris J. and Reeves, Melissa Q. and Zhang, Xiaoyang and Weinberger, Leor S. and VanBrocklin, Matthew W. and Deacon, Dekker C. and Grossman, Douglas and Spike, Benjamin T. and Lex, Alexander and Boyle, Glen M. and Kulkarni, Rajan and Zangle, Thomas A. and Judson-Torres, Robert L.},
+  journal  = {Cell Reports},
+  year     = {2025},
+  doi      = {10.1016/j.celrep.2025.116675},
+  slug     = {2025-brn2-myc},
+  abstract = {Metastatic spread and therapeutic resistance are the principal causes of cancer mortality. For melanoma, these processes rely on the capacity of cells to switch between transcriptional states. Although targeting transcriptional states pharmacologically is promising, the mechanisms by which melanoma cells switch between states---and how these processes differ from melanocytes---remain poorly understood. Here, we isolate distinct melanoma states with unique phenotypes: a MYC-driven state, essential for tumor initiation yet sensitive to BRAF inhibition, and a dedifferentiated, invasive BRN2-high state enriched in therapy-resistant cells but not directly tumorigenic. Transitions between phenotypes occur through intermediate, more differentiated states. Unexpectedly, the BRN2-high state is also present in melanocytes, whereas the MYC state is exclusive to melanoma. Melanoma cells also exhibit an increased frequency of transitions across states. These findings highlight that accelerated phenotypic switching, rather than mere state diversity, is a defining feature of melanoma progression.}
+}
+
+@misc{lange2025yac,
+  title         = {YAC: Bridging Natural Language and Interactive Visual Exploration with Generative AI for Biomedical Data Discovery},
+  author        = {Lange, Devin and Gao, Shanghua and Sui, Pengwei and Misner, Priya and van den Brandt, Astrid and Money, Austen and Akhmetov, Nikolay and Choy, Lisa and Zitnik, Marinka and Gehlenborg, Nils},
+  year          = {2025},
+  eprint        = {2509.19182},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.HC},
+  howpublished  = {arXiv:2509.19182},
+  venuename     = {arXiv preprint},
+  doi           = {10.48550/arXiv.2509.19182},
+  slug          = {2025-yac},
+  link_pdf      = {https://arxiv.org/pdf/2509.19182},
+  abstract      = {Incorporating natural language input has the potential to improve the capabilities of biomedical data discovery interfaces. However, user interface elements and visualizations are still powerful tools for interacting with data. In our prototype system, YAC, Yet Another Chatbot, we integrate natural language and interactive visualizations. YAC uses a tool-calling multi-agent system to generate declarative output, which is interpreted to render linked interactive visualizations and apply data filters. We also include adjustment widgets, which allow users to directly modify the structured output. Structured text is also generated to clarify user intent, notify users of system boundaries, and explain aspects of the data with live data element links. We conducted a user study with domain experts to surface areas where YAC can be improved. Furthermore we reflect on the capabilities and design of this system with an analysis of its technical dimensions.}
+}
+
+@inproceedings{lange2025genai,
+  title     = {A Generative AI System for Biomedical Data Discovery with Grammar-Based Visualizations},
+  author    = {Lange, Devin and Gao, Shanghua and Sui, Pengwei and Money, Austen and Misner, Priya and Zitnik, Marinka and Gehlenborg, Nils},
+  booktitle = {VIS x GenAI, a workshop co-located with IEEE VIS},
+  year      = {2025},
+  doi       = {10.48550/arXiv.2509.16454},
+  slug      = {2025-genai-biomedical},
+  image     = {/images/publications/2025-genai-biomedical.png},
+  link_pdf  = {https://arxiv.org/pdf/2509.16454},
+  abstract  = {We explore the potential for combining generative AI with grammar-based visualizations for biomedical data discovery. In our prototype, we use a multi-agent system to generate visualization specifications and apply filters. These visualizations are linked together, resulting in an interactive dashboard that is progressively constructed. Our system leverages the strengths of natural language while maintaining the utility of traditional user interfaces. Furthermore, we utilize generated interactive widgets enabling user adjustment. Finally, we demonstrate the potential utility of this system for biomedical data discovery with a case study.}
+}
+
+@inproceedings{walters2025gqvis,
+  title     = {GQVis: A Dataset of Genomics Data Questions and Visualizations for Generative AI},
+  author    = {Walters, Skylar Sargent and Valderrama, Arthea and Smits, Thomas C. and Kouřil, David and Nguyen, Huyen N. and L'Yi, Sehi and Lange, Devin and Gehlenborg, Nils},
+  booktitle = {VIS x GenAI, a workshop co-located with IEEE VIS},
+  year      = {2025},
+  doi       = {10.48550/arXiv.2510.13816},
+  slug      = {2025-gqvis},
+  link_pdf  = {https://arxiv.org/pdf/2510.13816},
+  abstract  = {Data visualization is a fundamental tool in genomics research, enabling the exploration, interpretation, and communication of complex genomic features. While machine learning models show promise for transforming data into insightful visualizations, current models lack the training foundation for domain-specific tasks. In an effort to provide a foundational resource for genomics-focused model training, we present a framework for generating a dataset that pairs abstract, low-level questions about genomics data with corresponding visualizations. Building on prior work with statistical plots, our approach adapts to the complexity of genomics data and the specialized representations used to depict them. We further incorporate multiple linked queries and visualizations, along with justifications for design choices, figure captions, and image alt-texts for each item in the dataset. We use genomics data retrieved from three distinct genomics data repositories (4DN, ENCODE, Chromoscope) to produce GQVis: a dataset consisting of 1.14 million single-query data points, 628k query pairs, and 589k query chains.}
+}
+
+@inproceedings{lange2025vispubsgames,
+  title        = {VisPubs Games: Joyful Discovery of Visualization Research(ers)},
+  author       = {Lange, Devin and Cutler, Zach and Lisnic, Maxim},
+  booktitle    = {alt.VIS, a workshop co-located with IEEE VIS},
+  year         = {2025},
+  doi          = {10.48550/arXiv.2509.16427},
+  slug         = {2025-vispubs-games},
+  image        = {/images/publications/2025-vispubs-games.png},
+  link_pdf     = {https://arxiv.org/pdf/2509.16427},
+  link_website = {https://games.vispubs.com},
+  abstract     = {Many sophisticated tools exist to help researchers find the academic literature they are searching for, but what about finding work that you aren't looking for? We promote joyful discovery of visualization research through two games (Colon and Authored) available to play now at https://games.vispubs.com. We believe these games provide several benefits to the visualization research community. First, the joyful discovery of visualization research and researchers occurs because these games randomly select authors and publications, thus exposing players to research areas they may not typically engage with. Second, these games were made by visualization researchers for visualization researchers; playing this game, sharing results with friends in person and online, has the potential to strengthen our academic community. Third, games centered around publication authors provide a passive way for academics to gain exposure within the community. Finally, we hope these games are simply fun to play. Try them now at games.vispubs.com.}
+}
+
+@article{lange2024aardvark,
+  title        = {Aardvark: Composite Visualizations of Trees, Time-Series, and Images},
+  author       = {Lange, Devin and Judson-Torres, Robert and Zangle, Thomas A. and Lex, Alexander},
+  journal      = {IEEE Transactions on Visualization and Computer Graphics},
+  year         = {2024},
+  doi          = {10.1109/TVCG.2024.3456193},
+  venuename    = {IEEE Transactions on Visualization and Computer Graphics (VIS)},
+  slug         = {2024-aardvark},
+  image        = {/images/publications/2024-aardvark.png},
+  award        = {IEEE VIS 2024 Best Paper Award},
+  link_pdf     = {https://www.devinlange.com/publication/pdf/2024-aardvark.pdf},
+  link_video   = {https://www.youtube.com/watch?v=mA6H4-i04g4},
+  link_website = {https://vdl.sci.utah.edu/publications/2024_vis_aardvark/},
+  abstract     = {How do cancer cells grow, divide, proliferate, and die? How do drugs influence these processes? These are difficult questions that we can attempt to answer with a combination of time-series microscopy experiments, classification algorithms, and data visualization. However, collecting this type of data and applying algorithms to segment and track cells and construct lineages of proliferation is error-prone; and identifying the errors can be challenging since it often requires cross-checking multiple data types. Similarly, analyzing and communicating the results necessitates synthesizing different data types into a single narrative. State-of-the-art visualization methods for such data use independent line charts, tree diagrams, and images in separate views. However, this spatial separation requires the viewer of these charts to combine the relevant pieces of data in memory. To simplify this challenging task, we describe design principles for weaving cell images, time-series data, and tree data into a cohesive visualization. Our design principles are based on choosing a primary data type that drives the layout and integrates the other data types into that layout. We then introduce Aardvark, a system that uses these principles to implement novel visualization techniques. Based on Aardvark, we demonstrate the utility of each of these approaches for discovery, communication, and data debugging in a series of case studies.}
+}
+
+@phdthesis{lange2024dissertation,
+  title     = {Is that Right? Data Visualizations for Scientific Quality Control},
+  author    = {Lange, Devin},
+  school    = {University of Utah},
+  year      = {2024},
+  venuename = {PhD dissertation, University of Utah},
+  slug      = {2024-dissertation}
+}
+
+@misc{lange2024vispubs,
+  title        = {VisPubs.com: A Visualization Publications Repository},
+  author       = {Lange, Devin},
+  year         = {2024},
+  howpublished = {OSF Preprints},
+  venuename    = {OSF preprint},
+  doi          = {10.31219/osf.io/dg3p2},
+  slug         = {2024-vispubs},
+  link_website = {https://vispubs.com},
+  link_code    = {https://github.com/Dev-Lan/vispubs},
+  abstract     = {Data visualization researchers publish in a various conferences and journals. This paper will focus on a few of the main venues, VIS, EuroVis, and CHI. In addition to the published manuscript, researchers often create other artifacts related to the work, such as videos, blog posts, and deployed versions of the tools created. Some of these artifacts can be found through search engines, but others are not readily accessible. Additionally, performing a keyword search across visualization publication venues is not currently possible. This project aims to collect publications along with their auxilary artifacts across venues into a single repository with a user friendly interface.}
+}
+
+@article{lange2023ferret,
+  title        = {Ferret: Reviewing Tabular Datasets for Manipulation},
+  author       = {Lange, Devin and Sahai, Shaurya and Phillips, Jeff M. and Lex, Alexander},
+  journal      = {Computer Graphics Forum},
+  year         = {2023},
+  doi          = {10.1111/cgf.14822},
+  venuename    = {Computer Graphics Forum (EuroVis)},
+  slug         = {2023-ferret},
+  image        = {/images/publications/2023-ferret.png},
+  link_pdf     = {https://www.devinlange.com/publication/pdf/2023-ferret.pdf},
+  link_video   = {https://www.youtube.com/watch?v=NcKqIBiipvA},
+  link_website = {https://ferret.sci.utah.edu/},
+  abstract     = {How do we ensure the veracity of science? The act of manipulating or fabricating scientific data has led to many high-profile fraud cases and retractions. Detecting manipulated data, however, is a challenging and time-consuming endeavor. Automated detection methods are limited due to the diversity of data types and manipulation techniques. Furthermore, patterns automatically flagged as suspicious can have reasonable explanations. Instead, we propose a nuanced approach where experts analyze tabular datasets, e.g., as part of the peer-review process, using a guided, interactive visualization approach. In this paper, we present an analysis of how manipulated datasets are created and the artifacts these techniques generate. Based on these findings, we propose a suite of visualization methods to surface potential irregularities. We have implemented these methods in Ferret, a visualization tool for data forensics work. Ferret makes potential data issues salient and provides guidance on spotting signs of tampering and differentiating them from truthful data.}
+}
+
+@inproceedings{akbaba2023troubling,
+  title        = {Troubling Collaboration: Matters of Care for Visualization Design Study},
+  author       = {Akbaba, Derya and Lange, Devin and Correll, Michael and Lex, Alexander and Meyer, Miriah},
+  booktitle    = {Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems},
+  year         = {2023},
+  doi          = {10.1145/3544548.3581168},
+  venuename    = {SIGCHI Conference on Human Factors in Computing Systems (CHI)},
+  slug         = {2023-troubling-collaboration},
+  image        = {/images/publications/2023-troubling-collaboration.png},
+  link_pdf     = {https://www.devinlange.com/publication/pdf/2023-troubling.pdf},
+  link_website = {https://vdl.sci.utah.edu/publications/2023_chi_troubling/},
+  abstract     = {A common research process in visualization is for visualization researchers to collaborate with domain experts to solve particular applied data problems. While there is existing guidance and expertise around how to structure collaborations to strengthen research contributions, there is comparatively little guidance on how to navigate the implications of, and power produced through the socio-technical entanglements of collaborations. In this paper, we qualitatively analyze reflective interviews of past participants of collaborations from multiple perspectives: visualization graduate students, visualization professors, and domain collaborators. We juxtapose the perspectives of these individuals, revealing tensions about the tools that are built and the relationships that are formed --- a complex web of competing motivations. Through the lens of matters of care, we interpret this web, concluding with considerations that both trouble and necessitate reformation of current patterns around collaborative work in visualization design studies to promote more equitable, useful, and care-ful outcomes.}
+}
+
+@misc{zhang2023interconversion,
+  title        = {Bidirectional interconversion between mutually exclusive tumorigenic and drug-tolerant melanoma cell phenotypes},
+  author       = {Zhang, Yuntian and Belote, Rachel L. and Urquijo, Marcus A. and Hansen, Maike M.K. and Hejna, Miroslav and Moustafa, Tarek E. and Liu, Tong and Lange, Devin and Vand-Rajabpour, Fatemeh and Chang, Matthew and Lohman, Brian K. and Stubben, Chris and Zhang, Xiaoyang and Weinberger, Leor S. and VanBrocklin, Matthew W. and Grossman, Douglas and Lex, Alexander and Kulkarni, Rajan and Zangle, Thomas A. and Judson-Torres, Robert L.},
+  year         = {2023},
+  howpublished = {bioRxiv},
+  venuename    = {bioRxiv preprint},
+  doi          = {10.1101/2020.08.26.269126},
+  slug         = {2023-melanoma-interconversion},
+  abstract     = {Human cancers can exhibit phenotype switching, resulting in cells that are more metastatic or that are more tolerant to treatment. However, the relationship between these aggressive states is not well understood. We investigated the dynamics of phenotypic switching in human melanoma cells by monitoring the fluorescent activity from a transgenic reporter of BRN2 promoter activation. Melanoma cells exhibit heterogeneous BRN2 expression patterns that are reestablished upon isolation and clonal outgrowth. Specifically, stable BRN2 expression was generally inherited over multiple generations while undergoing occasional bidirectional interconversion. We found that BRN2 low cells were required for tumor initiation and metastasis in animal engraftment assays but were more sensitive to targeted BRAF inhibition. In contrast, the BRN2 high state was not tumorigenic, but entry into this state was uniform and persistent among cells tolerant to targeted BRAF therapy. Single-cell RNA sequencing analyses revealed core programs exclusive to either the BRN2 high or low cells, each of which is present in ex vivo tumors, demonstrating the physiological relevance of these states. Our findings emphasize that one challenge of effectively targeting phenotype switching in melanoma as a therapeutic strategy could be balancing distinct aggressive phenotypes so that sensitizing tumors to BRAF inhibition does not inadvertently lead to further dissemination.}
+}
+
+@article{lange2021loon,
+  title        = {Loon: Using Exemplars to Visualize Large-Scale Microscopy Data},
+  author       = {Lange, Devin and Polanco, Eddie and Judson-Torres, Robert and Zangle, Thomas and Lex, Alexander},
+  journal      = {IEEE Transactions on Visualization and Computer Graphics},
+  year         = {2021},
+  doi          = {10.1109/TVCG.2021.3114766},
+  venuename    = {IEEE Transactions on Visualization and Computer Graphics (VIS)},
+  slug         = {2021-loon},
+  image        = {/images/publications/2021-loon.png},
+  award        = {IEEE VIS 2021 Honorable Mention Award},
+  link_pdf     = {https://www.devinlange.com/publication/pdf/2021-loon.pdf},
+  link_video   = {https://www.youtube.com/watch?v=Y7u3Kg3At9A},
+  link_website = {https://loon.sci.utah.edu/},
+  abstract     = {Which drug is most promising for a cancer patient? A new microscopy-based approach for measuring the mass of individual cancer cells treated with different drugs promises to answer this question in only a few hours. However, the analysis pipeline for extracting data from these images is still far from complete automation: human intervention is necessary for quality control for preprocessing steps such as segmentation, adjusting filters, removing noise, and analyzing the result. To address this workflow, we developed Loon, a visualization tool for analyzing drug screening data based on quantitative phase microscopy imaging. Loon visualizes both derived data such as growth rates and imaging data. Since the images are collected automatically at a large scale, manual inspection of images and segmentations is infeasible. However, reviewing representative samples of cells is essential, both for quality control and for data analysis. We introduce a new approach for choosing and visualizing representative exemplar cells that retain a close connection to the low-level data. By tightly integrating the derived data visualization capabilities with the novel exemplar visualization and providing selection and filtering capabilities, Loon is well suited for making decisions about which drugs are suitable for a specific patient.}
+}
+
+@inproceedings{lange2017trajectory,
+  title      = {Trajectory Mapper: Interactive Widgets and Artist-Designed Encodings for Visualizing Multivariate Trajectory Data},
+  author     = {Lange, Devin and Samsel, Francesca and Karamouzas, Ioannis and Guy, S. J. and Dockter, Rodney and Kowalewski, Timothy and Keefe, Daniel F.},
+  booktitle  = {EuroVis 2017 -- Short Papers},
+  year       = {2017},
+  doi        = {10.2312/eurovisshort.20171141},
+  venuename  = {EuroVis 2017 -- Short Papers},
+  slug       = {2017-trajectory-mapper},
+  image      = {/images/publications/2017-trajectory-mapper.png},
+  link_paper = {https://diglib.eg.org/handle/10.2312/eurovisshort20171141},
+  link_pdf   = {https://www.devinlange.com/publication/pdf/2017-trajectory.pdf},
+  link_video = {https://www.youtube.com/watch?v=IlOVqapORuk},
+  abstract   = {We present TrajectoryMapper, a system of novel interactive widgets and artist-designed visual encodings to support exploratory multivariate visualization of spatial trajectories. Trajectories are rendered using a three-way multi-texturing algorithm so that the color, texture, and shape of each mark can be manipulated separately in response to data. Visual encodings designed by artists and arranged in categories (e.g., divergent, linear, structured) are utilized as strong starting points for visual exploration. Interactive widgets including linked parallel coordinates plots, 3D camera controls, and projection to arbitrary 3D planes facilitate data exploration. An innovative visual mapper menu enables rapid experimentation with alternative data mappings using the artist-designed or custom encodings that can be created with no programming using image editing software. In addition to system design details and insights, two applications with collaborating domain science users are presented. The first requires analyzing 2D crowd simulations and the second 3D tool traces from laparoscopic surgery training exercises.}
+}
+
+@inproceedings{ramirez2014crowdpatches,
+  title      = {Optimization-based Computation of Locomotion Trajectories for Crowd Patches},
+  author     = {Rangel Ramirez, Jose Guillermo and Lange, Devin and Charalambous, Panayiotis and Esteves, Claudia and Pettré, Julien},
+  booktitle  = {Proceedings of the Seventh International Conference on Motion in Games (MIG '14)},
+  year       = {2014},
+  doi        = {10.1145/2668064.2668094},
+  slug       = {2014-crowd-patches},
+  image      = {/images/publications/2014-crowd-patches.png},
+  link_pdf   = {https://www.devinlange.com/publication/pdf/2014-optimization.pdf},
+  link_video = {https://www.youtube.com/watch?v=Zlqvp6et9cU},
+  abstract   = {Over the past few years, simulating crowds in virtual environments has become an important tool to give life to virtual scenes; be it movies, games, training applications, etc. An important part of crowd simulation is the way that people move from one place to another. This paper concentrates on improving the crowd patches approach proposed by Yersin et al. that aims on efficiently animating ambient crowds in a scene. This method is based on the construction of animation blocks (called patches) concatenated together under some constraints to create larger and richer animations with limited run-time cost. Specifically, an optimization based approach to generate smooth collision free trajectories for crowd patches is proposed. The contributions of this work to the crowd patches framework are threefold; firstly a method to match the end points of trajectories based on the Gale-Shapley algorithm is proposed that takes into account preferred velocities and space coverage, secondly an improved algorithm for collision avoidance is proposed that gives natural appearance to trajectories and finally a cubic spline approach is used to smooth out generated trajectories. We demonstrate several examples of patches and how they were improved by the proposed method, some limitations and directions for future improvements.}
+}

@@ -5,13 +5,14 @@ description: Add or update a paper on the Vizoic Lab website's publications page
 
 # Add a publication
 
-Creates one markdown file in `src/publications/`. The publications listing picks
-it up automatically — no other file should be touched.
+Appends one entry to `src/publications/publications.bib`. Everything else — the
+listing entry and the publication's own page — is generated from it, so that
+file is the only one to touch.
 
 Read `src/publications/README.md` and `src/publications/TEMPLATE.md` first; they
-are the source of truth for the field names and conventions.
-`src/publications/2024-aardvark.md` is a filled-in example with every optional
-field in use.
+are the source of truth for the field names and conventions. The
+`lange2024aardvark` entry in the .bib is a filled-in example using every
+optional field.
 
 ## Steps
 
@@ -22,47 +23,61 @@ field in use.
    - `authors` (required) — full list, **in publication order**.
    - `venue` (required) — journal, conference, or workshop, spelled out.
    - `year` (required).
-   - `type` (required) — `journal`, `conference`, `workshop`, or `preprint`.
-     Infer it from the venue and confirm; use AskUserQuestion if genuinely
-     ambiguous.
+   - entry type (required) — `@article`, `@inproceedings`, `@misc` for a
+     preprint, `@phdthesis`. Infer it from the venue and confirm; use
+     AskUserQuestion if genuinely ambiguous.
+   - `abstract` (optional but wanted) — retrieve it from the record rather than
+     asking; quote it verbatim.
    - `doi` (optional) — bare, e.g. `10.1109/TVCG.2024.3456193`.
    - `award` (optional) — ask only if the venue suggests one, or they mention it.
-   - `links` (optional) — usually `paper`, `pdf`, `video`, `website`. These
-     become the quick-links panel; never write them into the body as well.
-     Recognised link keys: `email`, `website`, `paper`, `pdf`, `video`, `code`,
-     `github`, `scholar`, `orcid`, `linkedin`, `mastodon`, `bluesky`. Another key
-     still renders, without an icon and with a build warning.
+   - `link_*` (optional) — usually `link_pdf`, `link_video`, `link_website`.
+     Recognised suffixes: `paper`, `pdf`, `video`, `website`, `code`, `data`,
+     `slides`. Another suffix still renders, with a generic icon and a build
+     warning.
+   - `image` (optional) — ask whether there is a teaser image and where it is;
+     it goes in `src/public/images/publications/`.
 
    Ask in as few rounds as possible, and only for what you could not parse.
 
 2. **Keep the data unformatted.** This is the part most likely to go wrong,
-   because these files are meant to generate a CV later as well as this site:
-   - `authors` is a YAML list, one name per line — never a single joined string,
-     never `et al.`
-   - `doi` is bare — strip any `https://doi.org/` prefix into the `doi` field and
-     put the full URL under `links.paper` if you want it clickable.
-   - `venue` has no `In `, no `Proceedings of`, no year appended.
+   because the file is meant to work as a real bibliography as well as the
+   site's data:
+   - `author` is BibTeX's `Last, First and Last, First` — never a joined
+     display string, never `et al.`
+   - `doi` is bare — no `https://doi.org/` prefix. The site builds the link,
+     and it doubles as the paper link, so `link_paper` is only needed when the
+     paper lives somewhere the DOI does not reach.
+   - `journal` / `booktitle` carry the canonical venue name; use `venuename`
+     only when the site should display something different.
    - Omit optional fields entirely rather than writing empty values.
 
-3. **Pick the filename.** `<year>-<short-name>.md`, lowercase with dashes, where
-   the short name is the system or one memorable word from the title:
-   `2024-aardvark.md`. Check the folder first — if it exists, this is an edit;
-   confirm before changing it.
+3. **Pick the key and slug.** The citation key is `lastname` + year + a short
+   name (`lange2024aardvark`) — something worth typing in a `\cite{}`. The
+   `slug` is `<year>-<short-name>`, lowercase with dashes, and becomes the page
+   address. Check the .bib first — if the work is already there, this is an
+   edit; confirm before changing it, and never change the slug of an entry
+   that is already published.
 
-4. **Write the file.** Copy `TEMPLATE.md`'s structure and leave the body as it
-   is: it reads title, authors, and venue back out of the frontmatter, and the
-   links render as the quick-links panel, so none of that gets retyped. Only fill in the Summary section if the person
-   gives you one — do not write an abstract yourself, and never invent a DOI,
-   award, or link that you have not been given or verified.
+4. **Write the entry**, appending it to `publications.bib` in the shape
+   `TEMPLATE.md` shows. Pick the entry type to match the work: `@article`,
+   `@inproceedings`, `@misc` for a preprint, `@phdthesis`. Include the
+   `abstract` when you can retrieve it from the DOI, arXiv, OpenReview, or
+   Crossref record — quote it verbatim, never write one yourself — and never
+   invent a DOI, award, or link you have not been given or verified.
 
-5. **Verify.** Run `pnpm build`, confirm it succeeds, and check that the paper
-   appears under the right year on the publications listing. Report the file
-   path and the page address (`/publications/<slug>`).
+   Write accents directly (`Pettré`), escape `&` as `\&`, and keep the
+   author list in publication order.
+
+5. **Verify.** Run `pnpm build`, confirm it succeeds with no warnings about
+   unrecognised link types, and check that the paper appears under the right
+   year on the publications listing and that its page renders. Report the page
+   address (`/publications/<slug>`).
 
 ## Rules
 
-- Create or modify exactly one publication file.
-- Never edit `src/publications/index.md` or
-  `src/publications/publications.data.mts`. If the request seems to need that,
-  stop and explain why.
-- Never rename an existing publication file — that breaks its published address.
+- Add or edit exactly one entry in `publications.bib`, and any teaser image it
+  needs in `src/public/images/publications/`.
+- Never edit `index.md`, `[slug].md`, `[slug].paths.mts`, or
+  `publications.data.mts`. Those generate every publication page; if the
+  request seems to need changing them, stop and explain why.
+- Never change the `slug` of an entry that is already published.

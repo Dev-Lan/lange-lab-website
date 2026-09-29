@@ -17,7 +17,6 @@ outline: false
 <AuthorList :authors="$params.authors" />
 <p class="publication-venue"><strong>{{ $params.venue }}</strong>, {{ $params.year }}</p>
 <AwardBadge :award="$params.award" />
-<LinkIcons :links="$params.links" :context="$params.slug" />
 
 ## Abstract
 

@@ -518,7 +518,8 @@
   line-height: 1.5;
 }
 
-.vp-doc a:not(.header-anchor):not(.team-card):not(.icon-link):hover,
+.vp-doc
+  a:not(.header-anchor):not(.team-card):not(.icon-link):not(:has(> img)):hover,
 .VPNav .VPNavBarMenu .VPNavBarMenuLink:hover,
 #VPContent .VPDocAsideOutline .outline-link:hover,
 .QuickLinks a:hover {
@@ -579,7 +580,10 @@
     max-width: max-content;
   }
 
-  .vp-doc a:not(.header-anchor):not(.team-card):not(.icon-link):hover,
+  .vp-doc
+    a:not(.header-anchor):not(.team-card):not(.icon-link):not(
+      :has(> img)
+    ):hover,
   .vp-doc a.team-card:hover .team-card-name,
   .VPNav .VPNavBarMenu .VPNavBarMenuLink:hover > span,
   #VPContent .VPDocAsideOutline .outline-link:hover,
@@ -602,6 +606,73 @@
     box-decoration-break: clone;
     animation: vizoic-link-sweep var(--vizoic-link-sweep-duration) ease-out
       var(--vizoic-link-sweep-delay) 1 both;
+  }
+}
+
+/*
+ * Image links.
+ *
+ * The sweep above paints the link's *glyphs*, so on a link that wraps an image
+ * — a publication teaser, say — there is nothing for it to draw on. Instead the
+ * image gets the same idea turned radial: the border takes the hover colour,
+ * and one ring of the shimmer hue ripples out from the centre and off the
+ * edges, on the same delay and duration as the text sweep.
+ *
+ * The ring is a radial gradient on an overlay whose background-size grows from
+ * nothing to 300% of the image. `closest-side` makes it a circle sized by the
+ * image's short side, so at full size its radius is 1.5 × the height and the
+ * ring (70–100% of that radius) sits outside the corners of any image up to
+ * about 2.8:1 — wide enough for every teaser here — before it fades.
+ */
+.vp-doc a:has(> img) {
+  position: relative;
+  display: inline-block;
+}
+
+.vp-doc a:has(> img) > img {
+  transition: border-color 0.25s;
+}
+
+.vp-doc a:not(.team-card):has(> img):hover > img {
+  border-color: var(--vizoic-c-link-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vp-doc a:not(.team-card):has(> img)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle closest-side,
+      transparent 70%,
+      color-mix(in srgb, var(--vizoic-c-link-shimmer) 20%, transparent) 85%,
+      transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0 0;
+    opacity: 0;
+  }
+
+  .vp-doc a:not(.team-card):has(> img):hover::after {
+    animation: vizoic-link-ripple var(--vizoic-link-sweep-duration) ease-out
+      var(--vizoic-link-sweep-delay) 1 both;
+  }
+}
+
+@keyframes vizoic-link-ripple {
+  from {
+    background-size: 0 0;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    background-size: 300% 300%;
+    opacity: 0;
   }
 }
 

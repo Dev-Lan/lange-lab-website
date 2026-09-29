@@ -217,26 +217,37 @@
  * gaps in it. Below 640px every entry stacks.
  */
 .publication-entry {
-  margin: 20px 0 28px;
-}
-
-.publication-entry.has-teaser {
   display: grid;
   grid-template-columns: 180px 1fr;
   gap: 20px;
   align-items: start;
+  margin: 20px 0 28px;
+}
+
+/* Entries with no teaser keep the column anyway, so every title starts at the
+   same left edge and the year reads as one list rather than a ragged one. The
+   empty panel is the same tint as the team cards' photo slot. */
+.publication-entry:not(.has-teaser)::before {
+  content: "";
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  background-color: transparent;
 }
 
 @media (max-width: 640px) {
-  .publication-entry.has-teaser {
+  .publication-entry {
     grid-template-columns: 1fr;
     /* Stacked, the gap sits between a teaser and its own title, so it wants to
        be small — the entry margin is what separates one paper from the next. */
     gap: 8px;
+    margin: 44px 0 0;
   }
 
-  .publication-entry {
-    margin: 44px 0 0;
+  /* Nothing to align against once everything is one column, so the reserved
+     panel would just be a blank block above the title. */
+  .publication-entry:not(.has-teaser)::before {
+    display: none;
   }
 }
 
@@ -451,7 +462,6 @@
 .CitationWidget .v-leave-to {
   opacity: 0;
 }
-
 
 /*
  * Link interaction.

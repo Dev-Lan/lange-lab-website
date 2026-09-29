@@ -7,9 +7,6 @@ Home page:
 
 publications:
 
-- remove underlines
-- spacing when no image?
-- award color
 - full publication data (pages, volumes, etc)
 - export to latex for cv
 

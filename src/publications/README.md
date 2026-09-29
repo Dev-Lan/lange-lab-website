@@ -50,7 +50,7 @@ Custom fields, read only by this site:
 | --- | --- |
 | `slug` | The page address. |
 | `venuename` | How the venue is shown, when it differs from the canonical field — e.g. `journal` is `IEEE Transactions on Visualization and Computer Graphics` but the site says `… (VIS)`. |
-| `image` | Teaser image path, e.g. `/images/publications/2024-aardvark.png`. Entries without one use the full width of the row rather than leaving a gap. |
+| `image` | Teaser image path, e.g. `/images/publications/2024-aardvark.png`. Entries without one still reserve the column, so every title lines up; the slot shows as an empty panel. |
 | `award` | Award text, shown as a badge on both the listing and the page. |
 | `link_*` | One per link. The suffix is a key the site knows how to label and illustrate: `paper`, `pdf`, `video`, `website`, `code`, `data`, `slides`. An unknown suffix still renders, with a generic icon and a build warning. |
 
